@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* Excel Electrics — design tokens (light / dark). Adjust here only. */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --text-muted: #475569;
+  --border: #e2e8f0;
+
+  /* Brand accents match dark theme so chrome + CTAs look identical in light mode */
+  --brand-blue: #3b82f6;
+  --brand-gold: #fbbf24;
+
+  /* Legacy alias: primary CTA colour (same as brand blue) */
+  --brand-accent: var(--brand-blue);
+  --brand-primary: #0f172a;
+
+  /* Light theme: chrome is white; `.dark` overrides below */
+  --nav-background: #ffffff;
+  --nav-border: #e2e8f0;
+  --surface-nav-panel: #ffffff;
+  --electrics-nav-footer-edge: var(--border);
+
+  --hero-gradient-from: #eff6ff;
+  --hero-gradient-to: #f8fafc;
+
+  /* Small jobs band — same layered treatment as dark mode */
+  --electrics-small-jobs-gradient:
+    radial-gradient(
+      ellipse 110% 80% at 95% 0%,
+      color-mix(in srgb, var(--brand-gold) 22%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 95% 70% at 0% 100%,
+      color-mix(in srgb, var(--brand-blue) 32%, transparent) 0%,
+      transparent 48%
+    ),
+    linear-gradient(
+      158deg,
+      #0d121f 0%,
+      #141c2e 44%,
+      color-mix(in srgb, var(--brand-blue) 14%, #0a0e18) 100%
+    );
+
+  /* Nav + footer — solid white in light mode */
+  --electrics-nav-footer-gradient: #ffffff;
+}
+
+.dark {
+  --background: #0b0f14;
+  --foreground: #f1f5f9;
+  --surface: #111827;
+  --surface-muted: #1e293b;
+  --text-muted: #94a3b8;
+  --border: #334155;
+
+  --brand-blue: #3b82f6;
+  --brand-gold: #fbbf24;
+
+  --brand-accent: var(--brand-blue);
+  --brand-primary: #f8fafc;
+
+  --nav-background: #0f1623;
+  --nav-border: #1e293b;
+  --surface-nav-panel: #111827;
+  --electrics-nav-footer-edge: rgba(255, 255, 255, 0.1);
+
+  --hero-gradient-from: #0f172a;
+  --hero-gradient-to: #0b0f14;
+
+  --electrics-small-jobs-gradient:
+    radial-gradient(
+      ellipse 110% 80% at 95% 0%,
+      color-mix(in srgb, var(--brand-gold) 22%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 95% 70% at 0% 100%,
+      color-mix(in srgb, var(--brand-blue) 32%, transparent) 0%,
+      transparent 48%
+    ),
+    linear-gradient(
+      158deg,
+      #0d121f 0%,
+      #141c2e 44%,
+      color-mix(in srgb, var(--brand-blue) 14%, #0a0e18) 100%
+    );
+
+  --electrics-nav-footer-gradient: linear-gradient(
+    158deg,
+    #0d121f 0%,
+    #141c2e 44%,
+    color-mix(in srgb, var(--brand-blue) 10%, #070b12) 100%
+  );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-nav: var(--nav-background);
+  --color-surface-nav-panel: var(--surface-nav-panel);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.text-brand-primary {
+  color: var(--brand-primary);
+}
+
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+
+.text-brand-accent {
+  color: var(--brand-accent);
+}
+
+.bg-brand-accent {
+  background-color: var(--brand-accent);
+}
+
+.text-brand-blue {
+  color: var(--brand-blue);
+}
+
+.bg-brand-blue {
+  background-color: var(--brand-blue);
+}
+
+.text-brand-gold {
+  color: var(--brand-gold);
+}
+
+.bg-brand-gold {
+  background-color: var(--brand-gold);
+}
+
+.bg-brand-nav {
+  background-color: var(--nav-background);
+}
+
+.btn-outline-brand {
+  border: 2px solid var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.btn-outline-brand:hover {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+}
+
+.themed-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.themed-muted-surface {
+  background: var(--surface-muted);
+}
+
+/* Nav + footer — blue-only chrome (`--electrics-nav-footer-gradient`; Small jobs band unchanged below) */
+.electrics-small-jobs-gradient-bg,
+.electrics-desktop-nav {
+  background: var(--electrics-nav-footer-gradient);
+}
+
+.electrics-desktop-nav {
+  border-bottom: 1px solid var(--electrics-nav-footer-edge);
+}
+
+/* Small jobs band — keep `--electrics-small-jobs-gradient` exactly (includes gold radial) */
+.electrics-small-jobs-band {
+  background: var(--electrics-small-jobs-gradient);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    background 0.3s ease,
+    border-color 0.25s ease;
+}
+
+.electrics-small-jobs-accent {
+  border-left: 3px solid var(--brand-blue);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+@keyframes whatsapp-horizontal-shake {
+  0%,
+  88%,
+  100% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(-3px);
+  }
+  92% {
+    transform: translateX(3px);
+  }
+  94% {
+    transform: translateX(-2px);
+  }
+  96% {
+    transform: translateX(2px);
+  }
+  98% {
+    transform: translateX(-1px);
+  }
+}
+
+.whatsapp-horizontal-shake {
+  animation: whatsapp-horizontal-shake 5s ease-in-out infinite;
+}
+
+@keyframes accreditations-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.accreditations-track {
+  animation: accreditations-marquee 34s linear infinite;
+  will-change: transform;
+}
+
+@keyframes electrics-hero-wrench-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-14deg);
+  }
+  40% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+.electrics-hero-secondary-btn:hover .electrics-hero-btn-wrench-icon svg {
+  animation: electrics-hero-wrench-shake 0.5s ease-in-out;
+  transform-origin: 55% 55%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accreditations-track {
+    animation: none;
+  }
+
+  .electrics-hero-secondary-btn:hover .electrics-hero-btn-wrench-icon svg {
+    animation: none;
+  }
+}
