@@ -28,7 +28,102 @@ export function SiteFooter() {
   return (
     <footer className="electrics-small-jobs-gradient-bg border-t border-[color:var(--electrics-nav-footer-edge)]">
       <div className="mx-auto w-full max-w-7xl px-6 pt-4 pb-10 md:pt-5 md:pb-12">
-        <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:items-stretch md:gap-x-10 lg:gap-x-12">
+        <div className="space-y-4 md:hidden">
+          <Link href="/#top" aria-label="Excel Electrics home" className="inline-block leading-none">
+            <ElectricsLogo width={188} height={49} />
+          </Link>
+          <p className="text-sm leading-relaxed text-[var(--text-muted)] dark:text-slate-300">
+            Friendly, local electricians for your home across Essex, Suffolk, Cambridge, London and Hertfordshire.
+          </p>
+
+          <nav aria-label="Footer links" className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-foreground dark:text-white/95">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-0.5 transition hover:text-brand-blue dark:hover:bg-white/15 dark:hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <nav aria-label="Legal and policies" className="flex flex-wrap gap-x-2.5 gap-y-1 text-xs text-[var(--text-muted)] dark:text-slate-400">
+            {footerLegalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-0.5 transition hover:text-foreground hover:underline dark:hover:text-slate-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="space-y-1.5 text-sm text-[var(--text-muted)] dark:text-slate-300">
+            <p>
+              <a
+                href="mailto:info@excelelectrics.com"
+                className="font-medium text-brand-blue transition hover:underline dark:text-white dark:hover:text-white"
+              >
+                info@excelelectrics.com
+              </a>
+            </p>
+            <p>
+              <a
+                href={FOOTER_PHONE_TEL}
+                className="font-medium text-foreground transition hover:text-brand-blue dark:text-white/95 dark:hover:text-white"
+              >
+                {FOOTER_PHONE_LABEL}
+              </a>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2" aria-label="Excel Electrics on social media">
+            <a
+              href={FOOTER_FACEBOOK_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${socialIconBtnClass} h-8 w-8`}
+              aria-label="Excel Electrics on Facebook"
+            >
+              <img
+                src="/icons/2023_Facebook_icon.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="h-4 w-4 object-contain"
+              />
+            </a>
+            <a
+              href={FOOTER_LINKEDIN_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${socialIconBtnClass} h-8 w-8`}
+              aria-label="Excel Electrics on LinkedIn"
+            >
+              <img
+                src="/icons/linkedin.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="h-4 w-4 object-contain"
+              />
+            </a>
+          </div>
+
+          <address className="text-xs leading-snug not-italic text-[var(--text-muted)] dark:text-slate-400">
+            124 City Road
+            <br />
+            London, EC1V 2NX
+          </address>
+
+          <div className="border-t border-[color:var(--electrics-nav-footer-edge)] pt-4 text-xs text-[var(--text-muted)] dark:text-slate-400">
+            <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
+          </div>
+        </div>
+
+        <div className="hidden md:grid md:grid-cols-2 md:items-stretch md:gap-x-10 lg:gap-x-12">
           <div className="flex min-h-0 min-w-0 flex-col md:h-full">
             <Link
               href="/#top"
@@ -135,7 +230,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs text-[var(--text-muted)] dark:text-slate-400">
+        <div className="mt-8 hidden border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs text-[var(--text-muted)] dark:text-slate-400 md:block">
           <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
         </div>
       </div>
