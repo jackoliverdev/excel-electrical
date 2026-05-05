@@ -79,7 +79,7 @@ export function ElectricsWhyUs() {
           Your home. Your safety. Done properly.
         </h2>
         <p className="text-muted mt-3 text-sm leading-relaxed md:text-base">
-          We treat every visit with care — from a single faulty light to a full upgrade — so you always know what to
+          We treat every visit with care - from a single faulty light to a full upgrade - so you always know what to
           expect.
         </p>
       </div>

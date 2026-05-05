@@ -22,18 +22,19 @@ export function DesktopNavbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:text-brand-blue dark:text-white/95 dark:hover:text-brand-blue"
+              className="rounded-md px-3 py-2 text-sm font-semibold hover:text-brand-blue dark:hover:text-brand-blue"
+              style={{ color: "var(--foreground)" }}
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="#contact"
-            className="ml-2 inline-flex items-center rounded-md bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 dark:bg-white dark:text-brand-blue dark:hover:bg-white/90 dark:hover:opacity-100"
+            className="ml-2 inline-flex items-center rounded-md bg-brand-blue px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-blue-600 dark:bg-white dark:hover:bg-white/90"
           >
-            Get a quote
+            <span style={{ color: "var(--surface)" }}>Get a quote</span>
           </Link>
-          <ThemeToggleButton className="ml-1 border-[var(--border)] text-foreground hover:border-brand-blue hover:text-brand-blue dark:!border-white/35 dark:!text-white dark:hover:!border-white dark:hover:!bg-white/10 dark:hover:!text-white" />
+          <ThemeToggleButton className="ml-1 dark:hover:bg-white/10" />
         </nav>
       </div>
     </header>

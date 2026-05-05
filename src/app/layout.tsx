@@ -19,12 +19,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Excel Electrics — Wire & Fire",
+  title: "Excel Electrics - Wire & Fire",
   description:
     "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridge, London and Hertfordshire.",
   icons: {
-    icon: "/ExcelElectrics/ExcelElectrics.png",
-    shortcut: "/ExcelElectrics/ExcelElectrics.png",
+    icon: "/ExcelElectrics/ExcelIcon.ico",
+    shortcut: "/ExcelElectrics/ExcelIcon.ico",
     apple: "/ExcelElectrics/ExcelElectrics.png",
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {isComingSoon ? (
             <ComingSoonScreen />

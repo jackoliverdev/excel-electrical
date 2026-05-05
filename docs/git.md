@@ -1,4 +1,4 @@
-git checkout -b feat/jetnowinitial
+git checkout -b feat/excelinitial
 git add .
 git commit -m "fix: cleanups"
-git push -u origin feat/jetnowinitial
+git push -u excelelectrical feat/excelinitial
