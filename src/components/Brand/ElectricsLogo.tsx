@@ -11,6 +11,7 @@ type ElectricsLogoProps = {
   width?: number;
   height?: number;
   priority?: boolean;
+  variant?: "auto" | "light" | "dark";
 };
 
 export function ElectricsLogo({
@@ -18,6 +19,7 @@ export function ElectricsLogo({
   width = 220,
   height = 56,
   priority = false,
+  variant = "auto",
 }: ElectricsLogoProps) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -26,7 +28,14 @@ export function ElectricsLogo({
     setMounted(true);
   }, []);
 
-  const logoSrc = mounted && resolvedTheme === "dark" ? DARK_LOGO_SRC : LIGHT_LOGO_SRC;
+  const logoSrc =
+    variant === "dark"
+      ? DARK_LOGO_SRC
+      : variant === "light"
+        ? LIGHT_LOGO_SRC
+        : mounted && resolvedTheme === "dark"
+          ? DARK_LOGO_SRC
+          : LIGHT_LOGO_SRC;
 
   return (
     <img

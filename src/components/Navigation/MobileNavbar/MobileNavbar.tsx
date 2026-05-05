@@ -40,14 +40,15 @@ export function MobileNavbar() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <ThemeToggleButton className="border-[var(--border)] text-foreground hover:border-brand-blue hover:text-brand-blue dark:!border-white/35 dark:!text-white dark:hover:!border-white dark:hover:!bg-white/10 dark:hover:!text-white" />
+          <ThemeToggleButton className="dark:hover:bg-white/10" />
           <button
             type="button"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-nav-panel"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--border)] text-foreground hover:border-brand-blue hover:text-brand-blue dark:border-white/35 dark:text-white dark:hover:border-white dark:hover:bg-white/10 dark:hover:text-white"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border hover:border-brand-blue hover:text-brand-blue dark:hover:border-brand-blue dark:hover:bg-white/10 dark:hover:text-brand-blue"
+            style={{ borderColor: "var(--border)", color: "var(--foreground)" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +92,8 @@ export function MobileNavbar() {
                   key={item.href}
                   href={item.href}
                   onClick={close}
-                  className="rounded-md px-3 py-3 text-sm font-semibold text-foreground transition hover:bg-slate-100 dark:text-white/95 dark:hover:bg-white/15 dark:hover:text-white"
+                  className="rounded-md px-3 py-3 text-sm font-semibold transition hover:bg-slate-100 dark:hover:bg-white/10"
+                  style={{ color: "var(--foreground)" }}
                 >
                   {item.label}
                 </Link>
@@ -99,7 +101,8 @@ export function MobileNavbar() {
               <Link
                 href="#contact"
                 onClick={close}
-                className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 dark:bg-white dark:text-brand-blue dark:hover:bg-white/90 dark:hover:opacity-100"
+                className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 py-3 text-sm font-semibold transition hover:opacity-90"
+                style={{ color: "#ffffff" }}
               >
                 Get a quote
               </Link>
