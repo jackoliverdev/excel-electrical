@@ -32,35 +32,37 @@ export function SiteFooter() {
           <Link href="/#top" aria-label="Excel Electrics home" className="inline-block leading-none">
             <ElectricsLogo width={188} height={49} />
           </Link>
-          <p className="text-sm leading-relaxed text-[var(--text-muted)] dark:text-slate-300">
+          <p className="text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
             Friendly, local electricians for your home across Essex, Suffolk, Cambridge, London and Hertfordshire.
           </p>
 
-          <nav aria-label="Footer links" className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-foreground dark:text-white/95">
+          <nav aria-label="Footer links" className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium">
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="rounded-md px-0.5 transition hover:text-brand-blue dark:hover:bg-white/15 dark:hover:text-white"
+                style={{ color: "var(--foreground)" }}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <nav aria-label="Legal and policies" className="flex flex-wrap gap-x-2.5 gap-y-1 text-xs text-[var(--text-muted)] dark:text-slate-400">
+          <nav aria-label="Legal and policies" className="flex flex-wrap gap-x-2.5 gap-y-1 text-xs">
             {footerLegalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="rounded-md px-0.5 transition hover:text-foreground hover:underline dark:hover:text-slate-200"
+                style={{ color: "var(--foreground)" }}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="space-y-1.5 text-sm text-[var(--text-muted)] dark:text-slate-300">
+          <div className="space-y-1.5 text-sm" style={{ color: "var(--foreground)" }}>
             <p>
               <a
                 href="mailto:info@excelelectrics.com"
@@ -112,13 +114,13 @@ export function SiteFooter() {
             </a>
           </div>
 
-          <address className="text-xs leading-snug not-italic text-[var(--text-muted)] dark:text-slate-400">
+          <address className="text-xs leading-snug not-italic" style={{ color: "var(--foreground)" }}>
             124 City Road
             <br />
             London, EC1V 2NX
           </address>
 
-          <div className="border-t border-[color:var(--electrics-nav-footer-edge)] pt-4 text-xs text-[var(--text-muted)] dark:text-slate-400">
+          <div className="border-t border-[color:var(--electrics-nav-footer-edge)] pt-4 text-xs" style={{ color: "var(--foreground)" }}>
             <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
           </div>
         </div>
@@ -132,7 +134,7 @@ export function SiteFooter() {
             >
               <ElectricsLogo width={200} height={52} />
             </Link>
-            <p className="mt-4 max-w-md flex-1 text-sm leading-relaxed text-[var(--text-muted)] dark:text-slate-300">
+            <p className="mt-4 max-w-md flex-1 text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
               Friendly, local electricians for your home - electrics, fire safety, access and automation.
               Clear pricing and dependable service across Essex, Suffolk, Cambridge, London and Hertfordshire.
             </p>
@@ -175,15 +177,13 @@ export function SiteFooter() {
 
           <div className="flex min-h-0 min-w-0 flex-col items-end gap-4 md:gap-3.5 md:pt-9">
             <div className="flex flex-col items-end gap-0">
-              <nav
-                aria-label="Footer links"
-                className="flex flex-wrap justify-end gap-x-3 gap-y-1.5 text-sm font-medium text-foreground dark:text-white/95"
-              >
+              <nav aria-label="Footer links" className="flex flex-wrap justify-end gap-x-3 gap-y-1.5 text-sm font-medium">
                 {footerLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className="rounded-md px-1 transition hover:text-brand-blue dark:hover:bg-white/15 dark:hover:text-white"
+                    style={{ color: "var(--foreground)" }}
                   >
                     {link.label}
                   </Link>
@@ -191,20 +191,21 @@ export function SiteFooter() {
               </nav>
               <nav
                 aria-label="Legal and policies"
-                className="flex flex-wrap justify-end gap-x-2.5 gap-y-1 text-xs text-[var(--text-muted)] dark:text-slate-400"
+                className="mt-1 flex flex-wrap justify-end gap-x-2.5 gap-y-1 text-xs"
               >
                 {footerLegalLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className="rounded-md px-0.5 transition hover:text-foreground hover:underline dark:hover:text-slate-200"
+                    style={{ color: "var(--foreground)" }}
                   >
                     {link.label}
                   </Link>
                 ))}
               </nav>
             </div>
-            <div className="w-full shrink-0 text-sm text-[var(--text-muted)] text-right dark:text-slate-300">
+            <div className="w-full shrink-0 text-sm text-right" style={{ color: "var(--foreground)" }}>
               <p>
                 <a
                   href="mailto:info@excelelectrics.com"
@@ -221,7 +222,7 @@ export function SiteFooter() {
                   {FOOTER_PHONE_LABEL}
                 </a>
               </p>
-              <address className="mt-2 text-xs leading-snug not-italic text-[var(--text-muted)] dark:text-slate-400">
+              <address className="mt-2 text-xs leading-snug not-italic" style={{ color: "var(--foreground)" }}>
                 124 City Road
                 <br />
                 London, EC1V 2NX
@@ -230,7 +231,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 hidden border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs text-[var(--text-muted)] dark:text-slate-400 md:block">
+        <div className="mt-8 hidden border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs md:block" style={{ color: "var(--foreground)" }}>
           <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
         </div>
       </div>
