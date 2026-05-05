@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ELECTRICS_SECTION_SHELL_MAJOR_SEAM } from "@/components/Electrics/ElectricsSection";
 
@@ -17,10 +17,8 @@ type AreaRegionGroup = {
   keywords: string[];
 };
 
-/** Electrics “Areas we cover”: simple column entrances (matches Why us / Services easing) */
-const ELECTRICS_AREAS_ENTRY_MS = 720;
-const ELECTRICS_AREAS_ENTRY_STAGGER_MS = 140;
-const ELECTRICS_AREAS_ENTRY_EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+const AUTO_ROTATE_INTERVAL_MS = 3000;
+const RESUME_AFTER_INTERACTION_MS = 2000;
 
 const nonEnglandAreaNameFragments = [
   // Northern Ireland (legacy + current council names)
@@ -509,6 +507,7 @@ export function HomeLocations({
   const [activeRegionId, setActiveRegionId] = useState<string>(() =>
     variant === "electrics" ? "all" : "london",
   );
+  const [isRotationPaused, setIsRotationPaused] = useState(false);
 
   const kicker = heading?.kicker ?? "Coverage";
   const title = heading?.title ?? "Areas we cover";
@@ -524,15 +523,27 @@ export function HomeLocations({
   });
   const desktopMapObjectRef = useRef<HTMLObjectElement | null>(null);
   const mobileMapObjectRef = useRef<HTMLObjectElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const electricsLeftColumnRef = useRef<HTMLDivElement | null>(null);
-  const electricsGridRef = useRef<HTMLDivElement | null>(null);
   const [electricsDesktopSyncHeight, setElectricsDesktopSyncHeight] = useState<number | null>(null);
-  const [electricsColumnsIn, setElectricsColumnsIn] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const regionChipScrollerRef = useRef<HTMLDivElement | null>(null);
   const regionChipRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const regionSwitchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const regionSwitchLockUntilRef = useRef(0);
   const manualRegionLockUntilRef = useRef(0);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const markInteraction = useCallback(() => {
+    setIsRotationPaused(true);
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsRotationPaused(false);
+      resumeTimeoutRef.current = null;
+    }, RESUME_AFTER_INTERACTION_MS);
+  }, []);
   const svgIdToAreaId = useMemo(() => {
     const map = new Map<string, string>();
 
@@ -599,6 +610,11 @@ export function HomeLocations({
     () => groupedAreas.find((group) => group.id === activeRegionId) ?? groupedAreas[0],
     [groupedAreas, activeRegionId],
   );
+  const autoRotateAreas = useMemo(() => {
+    if (variant !== "electrics") return displayAreas;
+    const visibleAreas = activeRegion?.areas ?? [];
+    return visibleAreas.length > 0 ? visibleAreas : displayAreas;
+  }, [variant, activeRegion, displayAreas]);
   const areaToRegionId = useMemo(() => {
     const regionMap = new Map<string, string>();
     groupedAreas.forEach((group) => {
@@ -616,6 +632,14 @@ export function HomeLocations({
     const observer = new MutationObserver(syncTheme);
     observer.observe(root, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -680,32 +704,69 @@ export function HomeLocations({
     };
   }, [activeArea, activeRegionId, areaToRegionId]);
 
-  /** Electrics: whole left / whole right column — simple slide + fade when section enters view */
   useEffect(() => {
-    if (variant !== "electrics") return;
+    if (autoRotateAreas.length <= 1 || isRotationPaused) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveAreaId((current) => {
+        const currentIndex = autoRotateAreas.findIndex((area) => area.id === current);
+        const nextIndex = (currentIndex + 1) % autoRotateAreas.length;
+        return autoRotateAreas[nextIndex]?.id ?? autoRotateAreas[0]?.id ?? current;
+      });
+    }, AUTO_ROTATE_INTERVAL_MS);
+
+    return () => window.clearInterval(intervalId);
+  }, [autoRotateAreas, isRotationPaused]);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        setIsRotationPaused(true);
+      } else if (!resumeTimeoutRef.current) {
+        setIsRotationPaused(false);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setElectricsColumnsIn(true);
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+  }, []);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
       return;
     }
 
-    const root = electricsGridRef.current;
-    if (!root) return;
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setElectricsColumnsIn(true);
-          io.disconnect();
-        }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
       },
-      { root: null, rootMargin: "0px 0px -10% 0px", threshold: [0.06] },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
     );
 
-    io.observe(root);
-    return () => io.disconnect();
-  }, [variant]);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   /** Desktop electrics: map card height tracks left column so bottoms align. */
   useEffect(() => {
@@ -982,7 +1043,10 @@ export function HomeLocations({
         const areaId = svgIdToAreaId.get(el.id);
         if (!areaId) return;
 
-        const handleActivate = () => setActiveAreaId(areaId);
+        const handleActivate = () => {
+          setActiveAreaId(areaId);
+          markInteraction();
+        };
         el.style.cursor = "pointer";
         el.addEventListener("mouseenter", handleActivate);
         el.addEventListener("click", handleActivate);
@@ -1031,7 +1095,7 @@ export function HomeLocations({
       loadCleanups.forEach((cleanup) => cleanup());
       eventCleanups.forEach((cleanup) => cleanup());
     };
-  }, [activeArea, pathname, svgIdToAreaId, isDarkTheme, displayAreas, variant]);
+  }, [activeArea, pathname, svgIdToAreaId, isDarkTheme, displayAreas, variant, markInteraction]);
 
   const chipActive = variant === "electrics";
   const regionChipActiveClass = chipActive
@@ -1057,28 +1121,22 @@ export function HomeLocations({
   const electricsMapCropPositionClass =
     "absolute bottom-0 left-1/2 w-full max-w-[540px] -translate-x-1/2";
   const defaultMapFrameClass = "relative aspect-square rounded-lg p-2";
+  const visibleClass = isVisible ? "is-visible" : "";
+  const textRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-left";
+  const mapRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-right";
 
   return (
     <section
+      ref={sectionRef}
       id={sectionId}
       className={variant === "electrics" ? ELECTRICS_SECTION_SHELL_MAJOR_SEAM : "pt-10 pb-10 md:pt-12 md:pb-12"}
     >
       <div
-        ref={electricsGridRef}
         className={`mx-auto grid w-full max-w-7xl gap-6 px-6 lg:grid-cols-[1fr_1fr] lg:gap-10 ${variant === "electrics" ? "lg:items-stretch" : "lg:items-center"}`}
       >
         <div
           ref={electricsLeftColumnRef}
-          className={`min-w-0 space-y-6 ${variant === "electrics" ? "lg:self-start" : ""}`}
-          style={
-            variant === "electrics"
-              ? {
-                  opacity: electricsColumnsIn ? 1 : 0,
-                  transform: electricsColumnsIn ? "translateX(0)" : "translateX(-22px)",
-                  transition: `opacity ${ELECTRICS_AREAS_ENTRY_MS}ms ${ELECTRICS_AREAS_ENTRY_EASE}, transform ${ELECTRICS_AREAS_ENTRY_MS}ms ${ELECTRICS_AREAS_ENTRY_EASE}`,
-                }
-              : undefined
-          }
+          className={`min-w-0 space-y-6 ${variant === "electrics" ? "lg:self-start" : ""} ${textRevealClass} ${visibleClass}`}
         >
           <div>
             <p
@@ -1182,6 +1240,7 @@ export function HomeLocations({
                         onClick={() => {
                           manualRegionLockUntilRef.current = Date.now() + 1200;
                           setActiveRegionId(group.id);
+                          markInteraction();
                         }}
                         className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-semibold transition whitespace-nowrap md:min-w-0 md:flex-1 md:px-2 md:text-[11px] ${
                           activeRegion?.id === group.id ? regionChipActiveClass : regionChipInactiveClass
@@ -1201,9 +1260,18 @@ export function HomeLocations({
                   <button
                     key={area.id}
                     type="button"
-                    onMouseEnter={() => setActiveAreaId(area.id)}
-                    onFocus={() => setActiveAreaId(area.id)}
-                    onClick={() => setActiveAreaId(area.id)}
+                    onMouseEnter={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
+                    onFocus={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
+                    onClick={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
                     className={`flex items-center gap-2 rounded-md border px-3 py-2 text-left text-sm font-semibold transition ${
                       activeAreaId === area.id ? areaBtnActiveClass : areaBtnInactiveClass
                     }`}
@@ -1244,9 +1312,18 @@ export function HomeLocations({
                   <button
                     key={area.id}
                     type="button"
-                    onMouseEnter={() => setActiveAreaId(area.id)}
-                    onFocus={() => setActiveAreaId(area.id)}
-                    onClick={() => setActiveAreaId(area.id)}
+                    onMouseEnter={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
+                    onFocus={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
+                    onClick={() => {
+                      setActiveAreaId(area.id);
+                      markInteraction();
+                    }}
                     className={`flex items-center gap-2 rounded-md border px-3 py-2 text-left text-sm font-semibold transition ${
                       activeAreaId === area.id ? areaBtnActiveClass : areaBtnInactiveClass
                     }`}
@@ -1276,7 +1353,7 @@ export function HomeLocations({
         </div>
 
         <div
-          className={`hidden w-full max-w-[540px] justify-self-center rounded-xl border bg-[var(--surface)] p-3 shadow-[0_18px_32px_-26px_rgba(15,23,42,0.28)] lg:block lg:justify-self-end ${
+          className={`hidden w-full max-w-[540px] justify-self-center rounded-xl border bg-[var(--surface)] p-3 shadow-[0_18px_32px_-26px_rgba(15,23,42,0.28)] lg:block lg:justify-self-end ${mapRevealClass} ${visibleClass} ${
             variant === "electrics" && electricsDesktopSyncHeight != null
               ? "lg:flex lg:min-h-0 lg:flex-col lg:self-end"
               : ""
@@ -1285,14 +1362,6 @@ export function HomeLocations({
             borderColor: isDarkTheme ? "transparent" : "var(--border)",
             backgroundColor: isDarkTheme ? "#000000" : "var(--surface)",
             boxShadow: isDarkTheme ? "none" : "0 18px 32px -26px rgba(15,23,42,0.28)",
-            ...(variant === "electrics"
-              ? {
-                  opacity: electricsColumnsIn ? 1 : 0,
-                  transform: electricsColumnsIn ? "translateX(0)" : "translateX(22px)",
-                  transition: `opacity ${ELECTRICS_AREAS_ENTRY_MS}ms ${ELECTRICS_AREAS_ENTRY_EASE}, transform ${ELECTRICS_AREAS_ENTRY_MS}ms ${ELECTRICS_AREAS_ENTRY_EASE}`,
-                  transitionDelay: electricsColumnsIn ? `${ELECTRICS_AREAS_ENTRY_STAGGER_MS}ms` : "0ms",
-                }
-              : {}),
             ...(variant === "electrics" && electricsDesktopSyncHeight != null
               ? {
                   height: Math.max(

@@ -38,7 +38,7 @@ export function SiteFooter() {
               <ElectricsLogo width={200} height={52} />
             </Link>
             <p className="mt-4 max-w-md flex-1 text-sm leading-relaxed text-[var(--text-muted)] dark:text-slate-300">
-              Friendly, local electricians for your home — electrics, fire safety, access and automation.
+              Friendly, local electricians for your home - electrics, fire safety, access and automation.
               Clear pricing and dependable service across Essex, Suffolk, Cambridge, London and Hertfordshire.
             </p>
             <div

@@ -77,7 +77,7 @@ export function ElectricsHero() {
           <p className="text-base leading-relaxed text-slate-200 md:text-lg">
             <span className="block">Need help with electrics or fire safety at home?</span>
             <span className="block">
-              We&apos;re here to make it simple — from small repairs to full installations, with clear pricing and no
+              We&apos;re here to make it simple - from small repairs to full installations, with clear pricing and no
               fuss.
             </span>
             <span className="block">Serving Essex, Suffolk, Cambridgeshire, Hertfordshire and London.</span>

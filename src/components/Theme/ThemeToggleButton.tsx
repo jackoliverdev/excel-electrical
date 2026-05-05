@@ -25,7 +25,8 @@ export function ThemeToggleButton({ className = "" }: ThemeToggleButtonProps) {
         if (!mounted) return;
         setTheme(isDark ? "light" : "dark");
       }}
-      className={`inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--border)] text-foreground transition hover:border-brand-blue hover:text-brand-blue ${className}`}
+      className={`inline-flex h-11 w-11 items-center justify-center rounded-md border bg-transparent hover:border-brand-blue hover:text-brand-blue ${className}`}
+      style={{ borderColor: "var(--border)", color: "var(--foreground)" }}
     >
       {isDark ? (
         <svg

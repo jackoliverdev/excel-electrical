@@ -9,7 +9,7 @@ export function ElectricsAreas() {
         kicker: "Local & reliable",
         title: "Areas we cover",
         lead:
-          "We cover Essex, Suffolk, Cambridgeshire, Hertfordshire, central London and Greater London — tap the map or a county for detail.",
+          "We cover Essex, Suffolk, Cambridgeshire, Hertfordshire, central London and Greater London - tap the map or a county for detail.",
       }}
     />
   );

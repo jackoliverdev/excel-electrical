@@ -47,7 +47,7 @@ export function MobileNavbar() {
             aria-expanded={isOpen}
             aria-controls="mobile-nav-panel"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--border)] text-foreground transition hover:border-brand-blue hover:text-brand-blue dark:border-white/35 dark:text-white dark:hover:border-white dark:hover:bg-white/10 dark:hover:text-white"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--border)] text-foreground hover:border-brand-blue hover:text-brand-blue dark:border-white/35 dark:text-white dark:hover:border-white dark:hover:bg-white/10 dark:hover:text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

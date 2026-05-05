@@ -11,7 +11,7 @@ const pillars = [
       "New lights, sockets & upgrades",
       "Consumer unit (fuse box) replacements",
       "Electrical safety checks (EICR)",
-      "Electrical Installation Certificates (EICs) — installs, additions & alterations",
+      "Electrical Installation Certificates (EICs) - installs, additions & alterations",
     ],
   },
   {
@@ -45,6 +45,9 @@ const pillars = [
 
 const STAGGER_MS = 180;
 const DRAW_MS = 1600;
+const CONTENT_REVEAL_MS = 760;
+const CONTENT_REVEAL_OFFSET_PX = 10;
+const CONTENT_REVEAL_LAG_MS = 180;
 
 export function ElectricsServices() {
   const regionRef = useRef<HTMLDivElement>(null);
@@ -84,7 +87,7 @@ export function ElectricsServices() {
         </h2>
       </div>
       <p className="text-muted mx-auto mt-3 max-w-4xl text-center text-sm leading-relaxed md:max-w-5xl md:text-base">
-        Whether it&apos;s everyday electrics, safer alarms, secure entry or automation — we bring the same tidy,
+        Whether it&apos;s everyday electrics, safer alarms, secure entry or automation - we bring the same tidy,
         professional approach.
       </p>
 
@@ -102,22 +105,30 @@ export function ElectricsServices() {
                   transition: `transform ${DRAW_MS}ms cubic-bezier(0.22, 1, 0.36, 1) ${railsOn ? index * STAGGER_MS : 0}ms`,
                 }}
               />
-              <div className="flex items-baseline gap-2">
-                <span className="font-mono text-[10px] font-semibold tabular-nums text-brand-gold md:text-[11px]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-foreground text-[15px] font-semibold leading-snug tracking-tight md:text-base">
-                  {pillar.title}
-                </h3>
+              <div
+                style={{
+                  opacity: railsOn ? 1 : 0,
+                  transform: railsOn ? "translate3d(0,0,0)" : `translate3d(0,-${CONTENT_REVEAL_OFFSET_PX}px,0)`,
+                  transition: `opacity ${CONTENT_REVEAL_MS}ms cubic-bezier(0.22, 1, 0.36, 1) ${railsOn ? index * STAGGER_MS + CONTENT_REVEAL_LAG_MS : 0}ms, transform ${CONTENT_REVEAL_MS}ms cubic-bezier(0.22, 1, 0.36, 1) ${railsOn ? index * STAGGER_MS + CONTENT_REVEAL_LAG_MS : 0}ms`,
+                }}
+              >
+                <div className="flex items-baseline gap-2">
+                  <span className="font-mono text-[10px] font-semibold tabular-nums text-brand-gold md:text-[11px]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-foreground text-[15px] font-semibold leading-snug tracking-tight md:text-base">
+                    {pillar.title}
+                  </h3>
+                </div>
+                <ul className="mt-3 space-y-1 border-t border-[var(--border)] pt-2.5 text-[13px] leading-snug text-[var(--text-muted)] md:text-sm md:leading-relaxed">
+                  {pillar.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-brand-blue/45" aria-hidden />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="mt-3 space-y-1 border-t border-[var(--border)] pt-2.5 text-[13px] leading-snug text-[var(--text-muted)] md:text-sm md:leading-relaxed">
-                {pillar.items.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-brand-blue/45" aria-hidden />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

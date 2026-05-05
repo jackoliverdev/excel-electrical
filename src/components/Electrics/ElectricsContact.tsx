@@ -3,11 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ElectricsSection } from "@/components/Electrics/ElectricsSection";
 
-/** Same rhythm as electrics Areas (`HomeLocations`) */
-const CONTACT_ENTRY_MS = 720;
-const CONTACT_ENTRY_STAGGER_MS = 140;
-const CONTACT_ENTRY_EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
-
 const labelClass =
   "text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]";
 
@@ -38,65 +33,65 @@ function IconMail({ className }: { className?: string }) {
 }
 
 export function ElectricsContact() {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [columnsIn, setColumnsIn] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+  }, []);
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setColumnsIn(true);
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
       return;
     }
 
-    const el = gridRef.current;
-    if (!el) return;
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setColumnsIn(true);
-          io.disconnect();
-        }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
       },
-      { root: null, rootMargin: "0px 0px -10% 0px", threshold: [0.06] },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
     );
 
-    io.observe(el);
-    return () => io.disconnect();
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
-  const asideStyle = {
-    opacity: columnsIn ? 1 : 0,
-    transform: columnsIn ? "translateX(0)" : "translateX(-22px)",
-    transition: `opacity ${CONTACT_ENTRY_MS}ms ${CONTACT_ENTRY_EASE}, transform ${CONTACT_ENTRY_MS}ms ${CONTACT_ENTRY_EASE}`,
-  };
-
-  const formStyle = {
-    opacity: columnsIn ? 1 : 0,
-    transform: columnsIn ? "translateX(0)" : "translateX(22px)",
-    transition: `opacity ${CONTACT_ENTRY_MS}ms ${CONTACT_ENTRY_EASE}, transform ${CONTACT_ENTRY_MS}ms ${CONTACT_ENTRY_EASE}`,
-    transitionDelay: columnsIn ? `${CONTACT_ENTRY_STAGGER_MS}ms` : "0ms",
-  };
+  const visibleClass = isVisible ? "is-visible" : "";
+  const textRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-left";
+  const formRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-right";
 
   return (
     <ElectricsSection id="contact" majorSeam>
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
-          Need a quote or advice?
-        </p>
-        <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">Get in touch</h2>
-        <p className="text-muted mx-auto mt-3 max-w-2xl text-sm leading-relaxed md:text-base">
-          Send a quick message or email us — we&apos;ll reply as soon as we can, usually the same day.
-        </p>
-      </div>
+      <div ref={sectionRef}>
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
+            Need a quote or advice?
+          </p>
+          <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">Get in touch</h2>
+          <p className="text-muted mx-auto mt-3 max-w-2xl text-sm leading-relaxed md:text-base">
+            Send a quick message or email us - we&apos;ll reply as soon as we can, usually the same day.
+          </p>
+        </div>
 
-      <div className="mx-auto mt-8 max-w-3xl border-t border-[var(--border)] pt-8 md:mt-10 md:pt-10 lg:mt-12 lg:max-w-5xl lg:pt-12">
-        <div
-          ref={gridRef}
-          className="grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:gap-0 lg:divide-x lg:divide-[var(--border)]"
-        >
-          <aside className="lg:pr-10" style={asideStyle}>
+        <div className="mx-auto mt-8 max-w-3xl border-t border-[var(--border)] pt-8 md:mt-10 md:pt-10 lg:mt-12 lg:max-w-5xl lg:pt-12">
+          <div
+            className="grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:gap-0 lg:divide-x lg:divide-[var(--border)]"
+          >
+            <aside className={`lg:pr-10 ${textRevealClass} ${visibleClass}`}>
             <div className="border-l-[3px] border-[color:var(--brand-blue)] pl-4">
               <div>
                 <p className={labelClass}>Email</p>
@@ -128,12 +123,11 @@ export function ElectricsContact() {
             </div>
           </aside>
 
-          <form
-            className="flex flex-col gap-4 lg:min-w-0 lg:pl-10"
-            action="#"
-            method="post"
-            style={formStyle}
-          >
+            <form
+              className={`flex flex-col gap-4 lg:min-w-0 lg:pl-10 ${formRevealClass} ${visibleClass}`}
+              action="#"
+              method="post"
+            >
             <div className="space-y-2">
               <label htmlFor="enquiry-name" className={labelClass}>
                 Name
@@ -194,7 +188,8 @@ export function ElectricsContact() {
               </span>
               Send message
             </button>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </ElectricsSection>
