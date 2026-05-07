@@ -110,7 +110,7 @@ export function ElectricsContact() {
                 >
                   020 3302 5558
                 </a>
-                <p className="text-muted mt-1 text-xs leading-snug">Mon–Fri, 9am–5pm</p>
+                <p className="text-muted mt-1 text-xs leading-snug">Mon-Fri, 09:00-17:00</p>
               </div>
               <div className="mt-6">
                 <address className="text-[15px] font-medium leading-snug text-foreground not-italic">

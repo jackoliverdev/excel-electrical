@@ -2,20 +2,20 @@
 
 /* Excel Electrics — design tokens (light / dark). Adjust here only. */
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f8f7fc;
+  --foreground: #140f28;
   --surface: #ffffff;
-  --surface-muted: #f1f5f9;
-  --text-muted: #475569;
-  --border: #e2e8f0;
+  --surface-muted: #f4f1ff;
+  --text-muted: #5f5a76;
+  --border: #ddd6f8;
 
   /* Brand accents match dark theme so chrome + CTAs look identical in light mode */
-  --brand-blue: #3b82f6;
-  --brand-gold: #fbbf24;
+  --brand-blue: #4b01b8;
+  --brand-gold: #8b5cf6;
 
   /* Legacy alias: primary CTA colour (same as brand blue) */
   --brand-accent: var(--brand-blue);
-  --brand-primary: #0f172a;
+  --brand-primary: #140f28;
 
   /* Light theme: chrome is white; `.dark` overrides below */
   --nav-background: #ffffff;
@@ -23,26 +23,32 @@
   --surface-nav-panel: #ffffff;
   --electrics-nav-footer-edge: var(--border);
 
-  --hero-gradient-from: #eff6ff;
-  --hero-gradient-to: #f8fafc;
+  --hero-gradient-from: #f3ecff;
+  --hero-gradient-to: #f8f7fc;
+  --electrics-hero-overlay: linear-gradient(
+    120deg,
+    rgba(9, 6, 19, 0.68) 0%,
+    rgba(22, 10, 43, 0.62) 45%,
+    rgba(5, 4, 12, 0.78) 100%
+  );
 
   /* Small jobs band — same layered treatment as dark mode */
   --electrics-small-jobs-gradient:
     radial-gradient(
       ellipse 110% 80% at 95% 0%,
-      color-mix(in srgb, var(--brand-gold) 22%, transparent) 0%,
+      color-mix(in srgb, var(--brand-gold) 28%, transparent) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 95% 70% at 0% 100%,
-      color-mix(in srgb, var(--brand-blue) 32%, transparent) 0%,
+      color-mix(in srgb, var(--brand-blue) 38%, transparent) 0%,
       transparent 48%
     ),
     linear-gradient(
       158deg,
-      #0d121f 0%,
-      #141c2e 44%,
-      color-mix(in srgb, var(--brand-blue) 14%, #0a0e18) 100%
+      #0d0a19 0%,
+      #1a1230 44%,
+      color-mix(in srgb, var(--brand-blue) 24%, #0b0714) 100%
     );
 
   /* Nav + footer — solid white in light mode */
@@ -50,50 +56,56 @@
 }
 
 .dark {
-  --background: #050b1a;
-  --foreground: #f1f5f9;
-  --surface: #111827;
-  --surface-muted: #1e293b;
-  --text-muted: #94a3b8;
-  --border: #334155;
+  --background: #08050f;
+  --foreground: #f5f2ff;
+  --surface: #130d22;
+  --surface-muted: #1b1331;
+  --text-muted: #bcb3da;
+  --border: #322758;
 
-  --brand-blue: #3b82f6;
-  --brand-gold: #fbbf24;
+  --brand-blue: #7f3dff;
+  --brand-gold: #b794ff;
 
   --brand-accent: var(--brand-blue);
-  --brand-primary: #f8fafc;
+  --brand-primary: #f5f2ff;
 
-  --nav-background: #0f1623;
-  --nav-border: #1e293b;
-  --surface-nav-panel: #111827;
+  --nav-background: #100a1f;
+  --nav-border: #2d2050;
+  --surface-nav-panel: #140d25;
   --electrics-nav-footer-edge: rgba(255, 255, 255, 0.1);
 
-  --hero-gradient-from: #0f172a;
-  --hero-gradient-to: #0b0f14;
+  --hero-gradient-from: #130d23;
+  --hero-gradient-to: #090613;
+  --electrics-hero-overlay: linear-gradient(
+    120deg,
+    rgba(9, 6, 19, 0.78) 0%,
+    rgba(22, 10, 43, 0.72) 45%,
+    rgba(5, 4, 12, 0.88) 100%
+  );
 
   --electrics-small-jobs-gradient:
     radial-gradient(
       ellipse 110% 80% at 95% 0%,
-      color-mix(in srgb, var(--brand-gold) 22%, transparent) 0%,
+      color-mix(in srgb, var(--brand-gold) 24%, transparent) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 95% 70% at 0% 100%,
-      color-mix(in srgb, var(--brand-blue) 32%, transparent) 0%,
+      color-mix(in srgb, var(--brand-blue) 44%, transparent) 0%,
       transparent 48%
     ),
     linear-gradient(
       158deg,
-      #0d121f 0%,
-      #141c2e 44%,
-      color-mix(in srgb, var(--brand-blue) 14%, #0a0e18) 100%
+      #0b0716 0%,
+      #160f29 44%,
+      color-mix(in srgb, var(--brand-blue) 22%, #090512) 100%
     );
 
   --electrics-nav-footer-gradient: linear-gradient(
     158deg,
-    #0d121f 0%,
-    #141c2e 44%,
-    color-mix(in srgb, var(--brand-blue) 10%, #070b12) 100%
+    #0b0716 0%,
+    #160f29 44%,
+    color-mix(in srgb, var(--brand-blue) 12%, #080512) 100%
   );
 }
 
@@ -185,7 +197,7 @@ body {
   background: var(--surface-muted);
 }
 
-/* Nav + footer — blue-only chrome (`--electrics-nav-footer-gradient`; Small jobs band unchanged below) */
+/* Nav + footer — purple chrome (`--electrics-nav-footer-gradient`; Small jobs band unchanged below) */
 .electrics-small-jobs-gradient-bg,
 .electrics-desktop-nav {
   background: var(--electrics-nav-footer-gradient);
@@ -205,7 +217,11 @@ body {
 }
 
 .electrics-small-jobs-accent {
-  border-left: 3px solid var(--brand-blue);
+  border-left: 3px solid var(--brand-gold);
+}
+
+.electrics-hero-overlay {
+  background: var(--electrics-hero-overlay);
 }
 
 .text-muted {

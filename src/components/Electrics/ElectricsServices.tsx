@@ -41,6 +41,14 @@ const pillars = [
       "Repairs, servicing & fault finding",
     ],
   },
+  {
+    title: "EV charging",
+    items: [
+      "Home EV charger installation",
+      "EV charger repairs and upgrades",
+      "Load checks and smart charging advice",
+    ],
+  },
 ];
 
 const STAGGER_MS = 180;
@@ -87,12 +95,12 @@ export function ElectricsServices() {
         </h2>
       </div>
       <p className="text-muted mx-auto mt-3 max-w-4xl text-center text-sm leading-relaxed md:max-w-5xl md:text-base">
-        Whether it&apos;s everyday electrics, safer alarms, secure entry or automation - we bring the same tidy,
-        professional approach.
+        From everyday electrics and safer alarms to access systems, automation and EV charging, we bring the same
+        tidy, professional approach.
       </p>
 
       <div ref={regionRef} className="mx-auto mt-10 max-w-7xl md:mt-12">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 xl:grid-cols-4 xl:gap-6">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 xl:grid-cols-5 xl:gap-6">
           {pillars.map((pillar, index) => (
             <div key={pillar.title} className="relative min-h-[4rem] pl-3.5">
               <span

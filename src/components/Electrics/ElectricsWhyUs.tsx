@@ -100,7 +100,7 @@ export function ElectricsWhyUs() {
               <li key={line} className="relative">
                 <div className="flex gap-3 py-3.5 text-left md:gap-4 md:py-4 pl-0.5 sm:pl-1">
                   <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand-blue/45 text-[11px] font-bold text-brand-blue"
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 text-[11px] font-bold text-brand-gold"
                     style={tickStyle(start)}
                     aria-hidden
                   >
