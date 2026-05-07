@@ -34,12 +34,12 @@ export function MobileNavbar() {
 
   return (
     <header className="electrics-desktop-nav sticky top-0 z-[120] lg:hidden">
-      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-6">
-        <Link href="/#top" aria-label="Excel Electrics home" className="shrink-0 py-1" onClick={close}>
-          <ElectricsLogo width={200} height={52} priority />
+      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link href="/#top" aria-label="Excel Electrics home" className="min-w-0 flex-1 py-1 pr-3" onClick={close}>
+          <ElectricsLogo width={224} height={58} className="h-auto w-full max-w-[224px]" priority />
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="shrink-0 flex items-center gap-2">
           <ThemeToggleButton className="dark:hover:bg-white/10" />
           <button
             type="button"
@@ -86,7 +86,7 @@ export function MobileNavbar() {
             id="mobile-nav-panel"
             className="electrics-desktop-nav fixed inset-x-0 top-[73px] z-[120] shadow-lg"
           >
-            <nav aria-label="Mobile navigation" className="mx-auto flex w-full max-w-7xl flex-col px-6 py-4">
+            <nav aria-label="Mobile navigation" className="mx-auto flex w-full max-w-7xl flex-col px-4 py-4 sm:px-6">
               {navLinks.map((item) => (
                 <Link
                   key={item.href}

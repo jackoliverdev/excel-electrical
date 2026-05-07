@@ -76,11 +76,11 @@ export function ElectricsWhyUs() {
           Why homeowners choose us
         </p>
         <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
-          Your home. Your safety. Done properly.
+          <span className="block sm:inline">Your home. Your safety.</span>
+          <span className="block sm:ml-1 sm:inline">Done properly.</span>
         </h2>
         <p className="text-muted mt-3 text-sm leading-relaxed md:text-base">
-          We treat every visit with care - from a single faulty light to a full upgrade - so you always know what to
-          expect.
+          We treat every visit with care, from a faulty light to a full upgrade, so you always know what to expect.
         </p>
       </div>
 

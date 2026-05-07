@@ -14,7 +14,7 @@ export function DesktopNavbar() {
     <header className="electrics-desktop-nav sticky top-0 z-[70] hidden lg:block">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 xl:px-8">
         <Link href="/#top" aria-label="Excel Electrics home" className="shrink-0 py-2">
-          <ElectricsLogo width={228} height={58} priority />
+          <ElectricsLogo width={260} height={66} priority />
         </Link>
 
         <nav aria-label="Primary navigation" className="flex items-center gap-1 xl:gap-2">

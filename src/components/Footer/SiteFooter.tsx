@@ -31,7 +31,7 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-7xl px-6 pt-4 pb-10 md:pt-5 md:pb-12">
         <div className="space-y-4 md:hidden">
           <Link href="/#top" aria-label="Excel Electrics home" className="inline-block leading-none">
-            <ElectricsLogo width={188} height={49} />
+            <ElectricsLogo width={208} height={54} />
           </Link>
           <p className="text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
             Friendly, local electricians for your home across Essex, Suffolk, Cambridgeshire, London and
@@ -138,7 +138,7 @@ export function SiteFooter() {
               aria-label="Excel Electrics home"
               className="inline-block shrink-0 leading-none"
             >
-              <ElectricsLogo width={200} height={52} />
+              <ElectricsLogo width={222} height={58} />
             </Link>
             <p className="mt-4 max-w-md flex-1 text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
               Friendly, local electricians for your home - electrics, fire safety, access and automation.

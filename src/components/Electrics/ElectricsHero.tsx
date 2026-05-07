@@ -48,15 +48,12 @@ function IconWrench({ className }: { className?: string }) {
 export function ElectricsHero() {
   return (
     <section id="top" className="relative isolate min-h-[70vh] scroll-mt-0 overflow-hidden bg-black md:min-h-[76vh]">
-      <video
-        src="/ExcelElectrics/12963907_960_540_30fps.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+      <img
+        src="/ExcelElectrics/Excel Home Hero.png"
+        alt="Electric vehicle charger installation at a home"
         className="absolute inset-0 h-full w-full object-cover object-center"
-        aria-label="Background video"
+        loading="eager"
+        decoding="async"
       />
 
       <div
