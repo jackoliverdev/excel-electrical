@@ -90,9 +90,11 @@ export function ElectricsServices() {
         <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
           What we can help with
         </p>
-        <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
-          Practical support for your home
-        </h2>
+        <div className="-mx-3 sm:mx-0">
+          <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
+            Practical support for your home
+          </h2>
+        </div>
       </div>
       <p className="text-muted mx-auto mt-3 max-w-4xl text-center text-sm leading-relaxed md:max-w-5xl md:text-base">
         From everyday electrics and safer alarms to access systems, automation and EV charging, we bring the same

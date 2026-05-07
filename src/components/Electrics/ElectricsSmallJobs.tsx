@@ -46,7 +46,8 @@ export function ElectricsSmallJobs() {
             Small jobs welcome
           </p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
-            The same attention, every time
+            <span className="block sm:inline">The same attention,</span>
+            <span className="block sm:ml-1 sm:inline">every time.</span>
           </h2>
           <p className="mt-3 text-sm leading-snug text-slate-300 md:text-[15px] md:leading-normal">
             Whether it&apos;s a faulty light, a new socket, or a full upgrade - we treat every job with the same care and
