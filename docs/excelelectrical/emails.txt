@@ -1,0 +1,506 @@
+ None selected
+
+Skip to content
+Using centrus.ai Mail with screen readers
+label:jodev
+
+1 of 2
+Excel Fire & Electrical
+External
+Inbox
+JoDev
+
+Matt Digby <matt.digby@excelfireltd.com>
+Thu, Apr 23, 11:53 AM
+to me
+
+https://www.cityfp.co.uk/
+https://www.allenglandgroup.co.uk/
+https://gibbsonn.com/contact/
+https://resinrock.com/
+https://clmfireproofing.com/
+
+Following on from our conversation, I would like the Excel Fire website completely revamped to bring to modernisation to include AI chat with whatsapp.
+I would also like the Excel Electrical page to be made, this will be basic for Mrs Doris friendly, I just need the final company guidelines created and domain purchased. 
+
+Kind regards,
+
+photo
+
+Matt Digby
+Operations Manager, Excel Fire Ltd
+
+icon 07588 816 274
+
+icon matt.digby@excelfireltd.com
+
+icon 0203 302 9558
+
+icon excelfireltd.com
+
+icon 124 City Road, London, EC1V 2NX
+
+instagram
+
+linkedin
+
+App Banner Image
+
+IMPORTANT: The contents of this email and any attachments are confidential. They are intended for the named recipient(s) only. If you have received this email by mistake, please notify the sender immediately and do not disclose the contents to anyone or make copies thereof.
+
+Custom Button App
+
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Thu, Apr 23, 4:27 PM
+to jackoliverdev
+
+--
+---
+
+
+
+
+Matt Digby <matt.digby@excelfireltd.com>
+Wed, Apr 29, 7:57 AM (8 days ago)
+to me
+
+Good morning Jack, 
+
+Hope you are well, 
+
+We have purchased the domain for the domestic electrical works. excelelectrics.com 
+I am now getting the final bits of branding sorted out, but would you be able to start making/drafting the website for this please in readiness with the WhatsApp chat box and or even basic AI bot? 
+
+What do you need from me to get this going and if you could please also give me a quote that’d be great. 
+As per our conversation, this is to be, basic, but smart, so Mrs Doris can review it cleanly. 
+
+Thank you, 
+
+Kind regards,
+photo
+Matt Digby
+Operations Manager, Excel Fire Ltd
+icon 07588 816 274
+icon matt.digby@excelfireltd.com
+icon 0203 302 9558
+icon excelfireltd.com
+icon 124 City Road, London, EC1V 2NX
+instagram
+linkedin
+App Banner Image
+IMPORTANT: The contents of this email and any attachments are confidential. They are intended for the named recipient(s) only. If you have received this email by mistake, please notify the sender immediately and do not disclose the contents to anyone or make copies thereof.
+Custom Button App
+
+From: Matt Digby <matt.digby@excelfireltd.com>
+Date: Thursday, 23 April 2026 at 11:53
+To: jack.melluish@centrus.ai <jack.melluish@centrus.ai>
+Subject: Excel Fire & Electrical
+
+...
+
+[Message clipped]  View entire message
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Wed, Apr 29, 11:07 AM (8 days ago)
+to Matt
+
+Hi Matt,
+
+Good morning - great to hear you've secured the domain!
+
+Since our meeting, I've gone ahead and built a mock-up of the Excel Fire homepage so you can see exactly the style and standard of work I'd produce, rather than just reading about it. Have a look when you get a chance and let me know what you think:
+
+https://excel-fire.vercel.app/
+
+WEBSITE DEVELOPMENT
+
+The website build would be completed by me personally as an independent web developer. Based on my understanding of the requirements (which you explained clearly when I visited), I'm happy to offer the following fixed-rate pricing:
+
+• Excel Electrical website - £1,500
+• Excel Fire website revamp - £3,000
+
+The difference in price reflects the number of pages, content, and elements involved, and the estimated time each project will take. Both prices are guaranteed fixed rates, provided there are no changes to the agreed scope. I'll make sure a clear scope is confirmed before any work begins.
+
+Included in both projects:
+• 3 months of bug fixes and standard alterations (text updates, image swaps, basic changes)
+• Full handover of credentials, code, and any supporting accounts
+• Full IP and ownership of the website passes to you on completion
+• Thorough documentation so any competent web developer can pick it up and continue if needed
+
+Any significant changes outside of the agreed scope (additional pages, new functionality, etc.) would be charged at £50/hour. After the three-month support period, any further work would also be charged at this rate.
+
+I'm happy to start with the Excel Electrical site first - this sounds like the higher priority right now, and it'll give you a chance to see how I work before we move on to the larger Excel Fire project.
+
+
+AI CHATBOT FUNCTIONALITY
+
+The AI chatbot would be provided through my company, Centrus AI LTD. We already have a significant amount of the infrastructure in place to support this, which makes achieving what you're after considerably more cost-effective than building from scratch.
+
+Pricing for the AI functionality would be approximately £50/month per website. I'll be able to confirm the exact figure once we've nailed down the scope of the chatbot - specifically the use cases you want it to handle and any tailored development required. That monthly fee covers development, monitoring, usage, and ongoing support on the AI side.
+
+
+Next steps - If you're happy to move forward, just let me know and I'll get a clear scope document over to you for the Excel Electrical site so we can get started
+
+Looking forward to working together.
+
+Thanks,
+Jack
+
+--
+---
+
+
+
+Matt Digby
+Attachments
+Apr 29, 2026, 11:35 AM (8 days ago)
+to me
+
+Hi Jack, 
+
+Thank you for this it’s greatly appreciated. It also looks amazing. 
+
+We are very very keen to ensure that we have AI functionality working on the websites. As mentioned, I have a coding done for what I ’think’ this should entail, but you are the professional so I would love to know what your thoughts are on this. Can we scope it and tailor it to suit the needs and services of the business. I’m not sure if this would be needed on the domestic electrical website but then again, it could do. I know people nowadays want information then are there instantly. Whats your thoughts?
+
+I can approve the Excel Electrics cost. I suppose you will need the company guidelines and everything for this (which at present I do not have) but these are being worked on. We do want this one to go live asap. What info can I give you to start with to at least get it ’sampled’. I have attached the SEO keywording for the website and services and sample logos that you can at least play with for now? Do you need anything purchased from GoDaddy regarding the domain?
+
+Also, would you manage the site, is this the £50.00 per hour rate and is this rate on major changes only and small little updates included? Do you need the original Wordpress from our previous developer to take over and shut down. I’m not sure how this would work?
+
+I have spoken with Wayne, Director of both businesses, and he has said, ‘if he gave you both company websites to do, Excel Fire & Excel Exteriors, would you do this for £5,000.00 combined, and could we look to pay 1/2 value in April, and remaining balance in May?’. 
+
+More than happy for a teams on this or another quick meeting if and when you can. 
+
+Kind regards,
+photo
+Matt Digby
+Operations Manager, Excel Fire Ltd
+icon 07588 816 274
+icon matt.digby@excelfireltd.com
+icon 0203 302 9558
+icon excelfireltd.com
+icon 124 City Road, London, EC1V 2NX
+instagram
+linkedin
+App Banner Image
+IMPORTANT: The contents of this email and any attachments are confidential. They are intended for the named recipient(s) only. If you have received this email by mistake, please notify the sender immediately and do not disclose the contents to anyone or make copies thereof.
+Custom Button App
+ 3 Attachments
+  •  Scanned by Gmail
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Wed, Apr 29, 2:49 PM (8 days ago)
+to Matt
+
+Hi Matt,
+
+Really glad you like the mock-up and great to hear Wayne is on board.
+
+Happy to do Excel Fire and Excel Exteriors for £5,000 combined - that works for me. And as confirmed, Excel Electrical at £1,500. In terms of payment, I typically do; 50% once all the pages and infrastructure are built out and we're nearly there, and the remaining 50% on go-live when we push the sites live. That should align nicely with the April/May dates you had in mind.
+
+On the AI scope - yes, definitely the best thing to do is sit down in person and go through it properly so we can make some notes and get fully aligned. Tomorrow works well for me - let me know if/when you're free and I'll pop in.
+
+In terms of ongoing changes and management - from go-live, any bug fixes and straightforward content updates (text changes, image swaps, that sort of thing) are included free of charge for three months. After that, rather than locking you into a monthly retainer where some months you might not need anything, I find the fairest approach is simply charging £50/hour for any work required.
+
+Even a small text change involves loading everything up, making the update, merging and pushing the code - it can take 15-20 minutes once you factor it all in. I'll keep a clear log of my time and only bill once it accrues to an hour, so I won't be rounding anything up unfairly. As mentioned, everything will be extremely thoroughly documented, so if you ever needed to take things elsewhere, that wouldn't be an issue at all.
+
+On the WordPress/GoDaddy question - yes, exactly right. I'll build the new site fresh, and when we're ready to go live, it's simply a case of logging into GoDaddy and pointing the domain to Vercel (where I'll host the site) rather than the old WordPress hosting. It's a straightforward DNS update, nothing to worry about there.
+
+Let me know if tomorrow works and a good time?
+
+Thanks,
+
+Jack
+--
+---
+
+
+
+Matt Digby
+Apr 29, 2026, 4:35 PM (8 days ago)
+to me
+
+Hi Jack,
+
+ 
+
+Thank you for coming back to me,
+
+ 
+
+That all sounds like a plan.
+
+I am on A/L tomorrow until Tuesday next week, are you available then to come in and see me to review what we need to do regarding the AI & whatsapp bits?
+
+ 
+
+In terms of right now, where do we need to start or what do you need from me to help you begin with the Excel Fire and Excel Electrics sites. (Exteriors can be done post these 2).
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Wed, Apr 29, 4:50 PM (8 days ago)
+to Matt
+
+Hi Matt,
+
+No worries at all - enjoy your annual leave!
+
+Tuesday afternoon next week works well for me, I'll pop in then if that's good?
+
+In terms of getting started, I'll kick off with Excel Electrical this week - the SEO document and sample logos you shared are really helpful, I've got enough to get going. I'll use the time between now and Tuesday to scaffold the site out and get a list of questions I need answered, so when I come in we can run through it, get your feedback, and make sure we're fully aligned.
+
+From there we'll put together a clear brief for each site, confirm all of the AI/WhatsApp details and get properly started!
+
+See you Tuesday - just let me know a time that works.
+
+Thanks,
+
+Jack
+--
+---
+
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Wed, Apr 29, 7:24 PM (8 days ago)
+to jackoliverdev
+
+--
+---
+
+
+
+
+Matt Digby
+Thu, Apr 30, 9:52 AM (7 days ago)
+to me
+
+Morning mate,
+
+ 
+
+Would 10am on Tuesday suit to come down?
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Thu, Apr 30, 9:55 AM (7 days ago)
+to Matt
+
+Morning mate, 
+
+I've got calls 10-12 on Tuesday at the moment, could do before or after if that works?
+--
+---
+
+
+
+Matt Digby
+Thu, Apr 30, 9:57 AM (7 days ago)
+to me
+
+Anytime after mate suits me, I have a call at 9am only,
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Thu, Apr 30, 10:02 AM (7 days ago)
+to Matt
+
+Perfect mate, I'll be there for 1pm, let me know if you need to shift slightly on the day, enjoy your time off!
+--
+---
+
+
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Fri, May 1, 3:48 PM (6 days ago)
+to Matt
+
+Hi Matt,
+
+Sorry, would it be possible to push this back a little bit please, I've been asked to visit a client at site, I'll be heading back from NG20 around 1pm, should be back and with you for 4pm Tuesday if that works?
+
+If not, I can do Wednesday afternoon if that works for you?
+
+Thanks,
+
+Jack
+--
+---
+
+
+
+Matt Digby
+Tue, May 5, 7:29 AM (2 days ago)
+to me
+
+Hi Jack, 
+
+No problem, 
+
+I can do Wednesday but it would need to be early afternoon as I need to leave the office at 2:30 latest.
+...
+
+[Message clipped]  View entire message
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+May 5, 2026, 8:54 AM (2 days ago)
+to Matt
+
+Hi Matt,
+
+That’s great thank you, apologies for rescheduling. 
+
+Wednesday works well, I can be there for 1pm if that works for you?
+
+Thanks,
+
+Jack
+
+---
+
+
+
+Kind regards,
+
+photo
+
+Matt Digby
+Operations Manager, Excel Fire Ltd
+
+icon 07588 816 274
+
+icon matt.digby@excelfireltd.com
+
+icon 0203 302 9558
+
+
+
+Matt Digby
+Tue, May 5, 9:22 AM (2 days ago)
+to me
+
+like	Matt Digby reacted to your message:
+From: Jack Melluish <Jack.Melluish@centrus.ai>
+Sent: Tuesday, 05 May 2026 07:54:03
+
+Matt Digby
+Attachments
+May 6, 2026, 1:15 PM (11 hours ago)
+to me
+
+
+
+Kind regards,
+photo
+Matt Digby
+Operations Manager, Excel Fire Ltd
+icon 07588 816 274
+icon matt.digby@excelfireltd.com
+icon 0203 302 9558
+icon excelfireltd.com
+icon 124 City Road, London, EC1V 2NX
+instagram
+linkedin
+App Banner Image
+IMPORTANT: The contents of this email and any attachments are confidential. They are intended for the named recipient(s) only. If you have received this email by mistake, please notify the sender immediately and do not disclose the contents to anyone or make copies thereof.
+Custom Button App
+ One attachment
+  •  Scanned by Gmail
+
+Matt Digby
+May 6, 2026, 3:21 PM (9 hours ago)
+to me
+
+Hi Jack,
+
+ 
+
+Thank you for coming down today.
+
+Following on from our meeting, please provide me with the updated excel electrics website demo when you can so we can review this. I will work on the AI information for you and get a whatsapp number purchased asap so this can all be incorporated.
+
+ 
+
+Please also send me over the details and information for the AI server as this may be an option for us to utilise too.
+
+...
+
+[Message clipped]  View entire message
+
+Matt Digby
+Attachments
+May 6, 2026, 4:13 PM (8 hours ago)
+to me
+
+Hi Jack,
+
+ 
+
+Please see attached AI canvas for the Excel Electrics website. I hope this is helpful. I asked it to separate the questions/sub sections based on the initial selection for domestic or commercial. Have a look and see if this is useful.
+
+ 
+
+I have also spoke with Wayne, and the website will need some small print at the footer maybe along the lines of:
+
+Excel Fire Ltd, Trading as Excel Electrics
+
+ 
+
+Or something like that at least to cover us legally.
+
+...
+
+[Message clipped]  View entire message
+ One attachment
+  •  Scanned by Gmail
+
+Jack Melluish <Jack.Melluish@centrus.ai>
+Attachments
+May 6, 2026, 4:20 PM (8 hours ago)
+to Matt
+
+Hi Matt,
+
+No worries at all, great to run through it all.
+
+I'll get the electrical website updated based on our conversation. Please see the links below and I'll let you know once the updated version is live, I've also attached the invoice for 50% of the Electrical website, thank you for sorting this out.
+
+https://excel-electrical.vercel.app/
+
+https://excel-fire.vercel.app/
+
+Perfect, thanks for sharing the AI information, I've had a quick flick through and looks great, undoubtedly some questions will crop up when we get into it but that's a perfect start, we'll get the website live and jump straight on it.
+
+Please see attached the overview for Centrus AI, once you've had a chance to chat through with Wayne, I'm happy to come down for a couple of hours and help get it set up initially for you, let me know if you have any questions on it.
+
+Thanks,
+
+Jack
+...
+
+[Message clipped]  View entire message
+ 2 Attachments
+  •  Scanned by Gmail
+
+Matt Digby
+May 6, 2026, 4:53 PM (7 hours ago)
+to me
+
+Hi Jack,
+
+ 
+
+Thank you for this, I have forwarded the invoice to Di to schedule for payment.
+
+ 
+
+Please send me over the revised excel electrics demo site with the purple once completed so we can review. I have also added another service onto the list, its on the AI canvas. EV Charging. Can you please add this onto the homepage too for me mate so we can see the difference and might be worth encompassing a couple of the services into one if it look too busy,
+
+...
+
+[Message clipped]  View entire message
+
+
+
+Page 12 of 12label:customers-bsml email. Press tab to insert.

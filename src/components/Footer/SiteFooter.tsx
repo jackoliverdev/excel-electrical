@@ -7,6 +7,7 @@ const FOOTER_LINKEDIN_HREF = "https://www.linkedin.com/";
 
 const FOOTER_PHONE_TEL = "tel:+442033025558";
 const FOOTER_PHONE_LABEL = "020 3302 5558";
+const FOOTER_LEGAL_DISCLAIMER = "Excel Fire Ltd, trading as Excel Electrics.";
 
 const footerLinks = [
   { label: "Services", href: "#services" },
@@ -33,7 +34,8 @@ export function SiteFooter() {
             <ElectricsLogo width={188} height={49} />
           </Link>
           <p className="text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
-            Friendly, local electricians for your home across Essex, Suffolk, Cambridge, London and Hertfordshire.
+            Friendly, local electricians for your home across Essex, Suffolk, Cambridgeshire, London and
+            Hertfordshire.
           </p>
 
           <nav aria-label="Footer links" className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium">
@@ -120,7 +122,11 @@ export function SiteFooter() {
             London, EC1V 2NX
           </address>
 
-          <div className="border-t border-[color:var(--electrics-nav-footer-edge)] pt-4 text-xs" style={{ color: "var(--foreground)" }}>
+          <div
+            className="border-t border-[color:var(--electrics-nav-footer-edge)] pt-4 text-xs"
+            style={{ color: "var(--foreground)" }}
+          >
+            <p className="mb-1">{FOOTER_LEGAL_DISCLAIMER}</p>
             <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
           </div>
         </div>
@@ -136,7 +142,7 @@ export function SiteFooter() {
             </Link>
             <p className="mt-4 max-w-md flex-1 text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
               Friendly, local electricians for your home - electrics, fire safety, access and automation.
-              Clear pricing and dependable service across Essex, Suffolk, Cambridge, London and Hertfordshire.
+              Clear pricing and dependable service across Essex, Suffolk, Cambridgeshire, London and Hertfordshire.
             </p>
             <div
               className="mt-4 flex shrink-0 flex-wrap items-center gap-2"
@@ -231,7 +237,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 hidden border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs md:block" style={{ color: "var(--foreground)" }}>
+        <div
+          className="mt-8 hidden border-t border-[color:var(--electrics-nav-footer-edge)] pt-6 text-xs md:block"
+          style={{ color: "var(--foreground)" }}
+        >
+          <p className="mb-1">{FOOTER_LEGAL_DISCLAIMER}</p>
           <p>© {new Date().getFullYear()} Excel Electrics. All rights reserved.</p>
         </div>
       </div>

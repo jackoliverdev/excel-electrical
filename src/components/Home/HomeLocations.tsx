@@ -194,7 +194,7 @@ const coverageAreas: CoverageArea[] = [
   {
     id: "london",
     county: "London",
-    towns: ["Westminster", "Camden", "Islington", "Southwark", "Lambeth", "City of London"],
+    towns: ["Westminster", "Camden", "Islington", "Southwark", "Lambeth", "Hackney", "City of London"],
     svgIds: londonCentralSvgIds,
   },
   {
@@ -245,7 +245,7 @@ const coverageAreas: CoverageArea[] = [
   {
     id: "suffolk",
     county: "Suffolk",
-    towns: ["Ipswich", "Bury St Edmunds", "Felixstowe", "Lowestoft", "Sudbury", "Newmarket"],
+    towns: ["Ipswich", "Bury St Edmunds", "Felixstowe", "Lowestoft", "Sudbury", "Stowmarket", "Newmarket"],
     svgIds: ["GBSFK"],
   },
 ];
@@ -261,7 +261,7 @@ export const electricsCoverageAreas: CoverageArea[] = [
   {
     id: "suffolk",
     county: "Suffolk",
-    towns: ["Ipswich", "Bury St Edmunds", "Felixstowe", "Lowestoft", "Sudbury", "Newmarket"],
+    towns: ["Ipswich", "Bury St Edmunds", "Felixstowe", "Lowestoft", "Sudbury", "Stowmarket", "Newmarket"],
     svgIds: ["GBSFK"],
   },
   {
@@ -279,7 +279,7 @@ export const electricsCoverageAreas: CoverageArea[] = [
   {
     id: "london",
     county: "London",
-    towns: ["Westminster", "Camden", "Islington", "Southwark", "Lambeth", "City of London"],
+    towns: ["Westminster", "Camden", "Islington", "Southwark", "Lambeth", "Hackney", "City of London"],
     svgIds: londonCentralSvgIds,
   },
   {
@@ -500,6 +500,8 @@ export function HomeLocations({
   sectionId,
   heading,
 }: HomeLocationsProps = {}) {
+  const getAreaLabel = (county: string) => (county === "Greater London" ? "G. London" : county);
+
   const pathname = usePathname();
   const initialAreas = variant === "electrics" ? electricsCoverageAreas : coverageAreas;
   const [displayAreas, setDisplayAreas] = useState<CoverageArea[]>(initialAreas);
@@ -873,8 +875,8 @@ export function HomeLocations({
       const serviceSvgIds = new Set(displayAreas.flatMap((area) => area.svgIds));
       const coverageIds = new Set(featurePaths.map((path) => path.id).filter((id) => serviceSvgIds.has(id)));
 
-      const fillCoverage = variant === "electrics" ? "#0051da" : "#f97316";
-      const fillActive = variant === "electrics" ? "#f3b711" : "#22c55e";
+      const fillCoverage = variant === "electrics" ? "#4b01b8" : "#f97316";
+      const fillActive = variant === "electrics" ? "#a855f7" : "#22c55e";
       const boxes = featurePaths
         .map((path) => {
           try {
@@ -1108,7 +1110,7 @@ export function HomeLocations({
     ? "border-brand-blue bg-brand-blue text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] dark:border-brand-blue dark:bg-brand-blue dark:text-white"
     : "border-emerald-500 bg-emerald-500 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] dark:border-emerald-500 dark:bg-emerald-500 dark:text-white";
   const areaBtnInactiveClass = chipActive
-    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-blue hover:bg-blue-50 hover:text-slate-900 dark:hover:bg-blue-950/25 dark:hover:text-blue-100"
+    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-blue hover:bg-[color-mix(in_srgb,var(--brand-blue)_12%,var(--surface))] hover:text-foreground dark:hover:bg-[color-mix(in_srgb,var(--brand-blue)_26%,var(--surface))] dark:hover:text-white"
     : "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-accent hover:bg-orange-50 hover:text-slate-900 dark:hover:bg-orange-950/30 dark:hover:text-orange-100";
   const checkMuted = chipActive ? "text-brand-blue" : "text-brand-accent";
 
@@ -1283,7 +1285,7 @@ export function HomeLocations({
                     >
                       ✓
                     </span>
-                    <span>{area.county}</span>
+                    <span>{getAreaLabel(area.county)}</span>
                   </button>
                 ))}
               </div>
@@ -1335,7 +1337,7 @@ export function HomeLocations({
                     >
                       ✓
                     </span>
-                    <span>{area.county}</span>
+                    <span>{getAreaLabel(area.county)}</span>
                   </button>
                 ))}
               </div>

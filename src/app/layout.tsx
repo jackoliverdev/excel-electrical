@@ -21,10 +21,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Excel Electrics - Wire & Fire",
   description:
-    "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridge, London and Hertfordshire.",
+    "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridgeshire, London and Hertfordshire.",
   icons: {
-    icon: "/ExcelElectrics/ExcelIcon.ico",
-    shortcut: "/ExcelElectrics/ExcelIcon.ico",
+    icon: "/ExcelElectrics/excelelectricsnobgx.ico",
+    shortcut: "/ExcelElectrics/excelelectricsnobgx.ico",
     apple: "/ExcelElectrics/ExcelElectrics.png",
   },
 };

@@ -1,0 +1,503 @@
+AI Chat Widget Developer Specification
+Purpose
+Create an AI chat widget for the website that helps visitors quickly identify the type of work they need, collect the
+key enquiry details, review any uploaded attachments where possible, and pass a clear summary to the correct
+human contact via WhatsApp for follow-up.
+The widget should support both AI-led enquiry handling and human handover through WhatsApp during working
+hours or out of hours.
+
+1. Initial Widget Behaviour
+When the widget opens for the first time, it should display a friendly welcome message and ask the visitor to
+choose one of the following:
+First Selection
+1. Domestic Works
+2. Commercial Works
+This selection must be stored and used to route the customer into the correct journey.
+Example welcome message:
+Hi, thanks for getting in touch. Are you enquiring about domestic or commercial works today?
+Once the customer makes this selection, the widget should move into either the Domestic Works Journey or the
+Commercial Works Journey below.
+
+2. Domestic Works Journey
+This journey is for homeowners, landlords, tenants, residential property managers, and anyone enquiring about
+works at a house, flat, apartment, rental property, domestic garage, driveway, or residential building.
+Domestic Main Scope Options
+After selecting Domestic Works, the widget should ask:
+Thanks. What type of domestic work can we help you with?
+Options:
+1. Electrical Works
+2. Fire Safety
+3. Access &amp; Security
+4. Garage Doors &amp; Electric Gates
+5. EV Charging
+
+2.1 Domestic Electrical Works
+Sub-options:
+1. Fault finding &amp; repairs
+
+2. New lights, sockets &amp; upgrades
+3. Consumer Unit / fuse box maintenance and replacement
+4. Electrical safety checks / EICR
+5. Electrical installation certification / EICs
+6. Other domestic electrical work
+Suggested follow-up questions:
+ Is this an urgent electrical fault or a planned job?
+ Can you briefly describe the issue or work required?
+ Which part of the property is affected?
+ Is there any loss of power, burning smell, sparking, or repeated tripping?
+ Have you had any recent electrical work carried out?
+ Is the property owned, rented, or managed on behalf of someone else?
+ For EICR or certification enquiries: is this for a landlord, homeowner, house sale, rental, insurance, or
+compliance requirement?
+
+2.2 Domestic Fire Safety
+Sub-options:
+1. Smoke alarm installation &amp; upgrades
+2. Heat detectors
+3. Domestic fire alarm systems
+4. General home fire safety matter
+5. Repairs or upgrades to existing domestic fire safety systems
+Suggested follow-up questions:
+ Is this for a new installation, upgrade, repair, or inspection?
+ Is there an existing alarm system in place?
+ How many floors are in the property?
+ Which areas need coverage?
+ Are the alarms mains-powered, battery-powered, or unknown?
+ Is this connected to a landlord or rental property requirement?
+ Is there a specific deadline?
+
+2.3 Domestic Access &amp; Security
+Sub-options:
+1. Door entry systems
+2. Residential access control
+3. Repairs &amp; upgrades of existing systems
+4. Intercom systems
+5. Keypad, fob, or app-based access
+6. Other domestic access or security requirement
+Suggested follow-up questions:
+ Is this for a house, flat, apartment block, gate, or communal residential entrance?
+ Is this a new system or an existing system?
+ What type of access is required: keypad, fob, card, intercom, app-based, or other?
+
+ How many doors, entrances, gates, or access points are involved?
+ Is the system currently faulty or are you looking to upgrade?
+ Do multiple residents, tenants, or family members need access?
+
+2.4 Domestic Garage Doors &amp; Electric Gates
+Sub-options:
+1. Automated garage doors
+2. Electric gate installation
+3. Converting manual garage doors or gates to electric
+4. Repairs to existing automated doors or gates
+5. Servicing or maintenance
+6. Safety features, controls, remotes, or intercom integration
+Suggested follow-up questions:
+ Is this a new installation, conversion, repair, or service?
+ Do you currently have a manual or automated system?
+ What type of garage door or gate is currently installed?
+ Is power already available near the garage door or gate?
+ Would you like remote controls, keypad access, intercom integration, or app control?
+ Is the current system stuck, unsafe, damaged, or unreliable?
+
+2.5 Domestic EV Charging
+Sub-options:
+1. Home EV charger installation
+2. EV charger repairs or fault finding
+3. EV charger replacement or upgrade
+4. Load assessment / electrical supply check
+5. Tethered or untethered charger advice
+6. Smart charger setup or connectivity issues
+7. Solar-compatible EV charging advice
+8. Other home EV charging requirement
+Suggested follow-up questions:
+ Do you already own the EV charger, or would you like one supplied and installed?
+ Do you have off-street parking?
+ Where would you like the charger installed?
+ What vehicle make/model do you have, if known?
+ Is your current electrical supply single-phase or unknown?
+ Would you prefer a tethered or untethered charger?
+ Do you need smart charging, app control, solar compatibility, or load management?
+ Is there already power near the preferred charger location?
+
+3. Commercial Works Journey
+
+This journey is for businesses, offices, shops, warehouses, industrial units, schools, landlords, managing agents,
+facilities managers, commercial landlords, and other non-domestic premises.
+Commercial Main Scope Options
+After selecting Commercial Works, the widget should ask:
+Thanks. What type of commercial work can we help you with?
+Options:
+1. Electrical Works
+2. Fire Safety
+3. Access &amp; Security
+4. Garage Doors &amp; Electric Gates
+5. EV Charging
+
+3.1 Commercial Electrical Works
+Sub-options:
+1. Fault finding &amp; repairs
+2. Lighting, sockets &amp; power upgrades
+3. Distribution board / consumer unit maintenance and replacement
+4. Commercial electrical safety checks / EICR
+5. Electrical installation certification / EICs
+6. Emergency lighting
+7. Planned maintenance
+8. Other commercial electrical work
+Suggested follow-up questions:
+ Is this an urgent fault or a planned commercial job?
+ What type of premises is this: office, shop, warehouse, industrial unit, school, communal building, or other?
+ Can you briefly describe the issue or work required?
+ Which areas of the premises are affected?
+ Is there any loss of power, burning smell, tripping, damage, or safety concern?
+ Is the work connected to compliance, insurance, tenancy, or planned maintenance?
+ Is there a deadline or inspection date?
+ Will works need to be carried out during business hours, evenings, or weekends?
+
+3.2 Commercial Fire Safety
+Sub-options:
+1. Commercial fire alarm systems
+2. Fire alarm maintenance or testing
+3. Smoke alarm installation &amp; upgrades
+4. Heat detectors
+5. Repairs or upgrades to existing fire safety systems
+6. General commercial fire safety matter
+7. Emergency lighting linked to fire safety
+8. Compliance or remedial works
+Suggested follow-up questions:
+
+ Is this for a new installation, upgrade, repair, inspection, or maintenance?
+ What type of commercial premises is this?
+ Is there an existing fire alarm system in place?
+ How many floors, zones, or areas need coverage?
+ Do you require maintenance, testing, certification, or remedial works?
+ Is there a specific compliance, insurance, or fire risk assessment deadline?
+ Are there any current faults showing on the fire alarm panel?
+ Will access be available during normal working hours?
+
+3.3 Commercial Access &amp; Security
+Sub-options:
+1. Door entry systems
+2. Commercial access control
+3. Repairs &amp; upgrades of existing systems
+4. Intercom systems
+5. Keypad, fob, card, or app-based access
+6. Staff access management
+7. Communal or multi-tenant building access
+8. Other commercial access or security requirement
+Suggested follow-up questions:
+ What type of premises is this: office, shop, warehouse, block, school, communal building, or other?
+ Is this a new system or an existing system?
+ What type of access is required: keypad, fob, card, intercom, app-based, or other?
+ How many doors, entrances, gates, or access points are involved?
+ How many staff, tenants, users, or residents need access?
+ Is the system currently faulty or are you looking to upgrade?
+ Do you need access permissions, time schedules, audit logs, or remote management?
+
+3.4 Commercial Garage Doors &amp; Electric Gates
+Sub-options:
+1. Automated commercial garage doors
+2. Electric gate installation
+3. Converting manual systems to electric
+4. Repairs to existing automated doors or gates
+5. Servicing or maintenance
+6. Safety features, controls, remotes, or intercom integration
+7. Industrial or roller shutter automation
+8. Access control integration
+Suggested follow-up questions:
+ Is this a new installation, conversion, repair, or service?
+ What type of commercial premises is this?
+ Do you currently have a manual or automated system?
+ What type of door, gate, shutter, or barrier is currently installed?
+ Is power already available near the system?
+
+ Is the system used by staff, customers, vehicles, deliveries, or tenants?
+ Is the current system stuck, unsafe, damaged, or unreliable?
+ Are there any site access restrictions or working hour restrictions?
+
+3.5 Commercial EV Charging
+Sub-options:
+1. Commercial EV charger installation
+2. Multiple EV charging points
+3. Staff EV charging
+4. Customer or visitor EV charging
+5. EV charger repairs or fault finding
+6. EV charger replacement or upgrade
+7. Load assessment / electrical supply check
+8. Load management and future expansion
+9. Billing, access control, or usage management
+10. Other commercial EV charging requirement
+Suggested follow-up questions:
+ What type of business or premises is this?
+ How many charging bays are required now?
+ Would you like capacity for future expansion?
+ Are the chargers for staff, customers, visitors, fleet vehicles, tenants, or public use?
+ Do you already have chargers installed?
+ Do you need charger supply and installation, or installation only?
+ Is the site single-phase, three-phase, or unknown?
+ Do you need billing, access control, usage tracking, or load management?
+ Is there an existing parking layout or proposed charger location?
+ Is there a deadline, grant application, compliance requirement, or planned project date?
+
+4. Attachment Upload Option
+The widget must include an attachment option so the customer can upload relevant files for the AI bot and human
+team to review.
+Attachment Types
+The attachment feature should support, where technically possible:
+1. Images
+2. Videos
+3. Documents
+4. PDFs
+5. Certificates
+6. Electrical reports
+7. Fire alarm reports
+8. EICR reports
+9. Photos of faults, panels, consumer units, gates, chargers, alarms, or access systems
+10. Short video clips showing the issue
+
+Attachment Prompt
+The bot should ask:
+Do you have any photos, videos, documents, reports, or certificates you would like to attach? These can
+help us understand the issue before we contact you.
+Options:
+1. Yes, upload attachments
+2. No attachments
+3. I can send them later
+AI Review Requirement
+Where technically possible, the AI bot should be able to read and review uploaded attachments to extract useful
+context, such as:
+ Visible fault details
+ Photos of consumer units, distribution boards, chargers, alarms, gates, garage doors, access panels, or
+wiring
+ Existing certificate or report details
+ EICR observations or remedial codes
+ Fire alarm panel faults
+ Manufacturer or model information
+ Site photos showing access, parking, or installation location
+ Safety concerns visible in images or videos
+The AI should summarise any useful findings from attachments in the WhatsApp handover message.
+Important note for developer:
+The AI should not make final safety-critical decisions based only on images or attachments. Any potential safety
+issue should be flagged for human review.
+Attachment Storage / Handover Requirement
+Uploaded attachments should either be:
+1. Sent directly through the WhatsApp handover where possible, or
+2. Stored securely and linked in the WhatsApp summary for the team to review.
+The WhatsApp handover should include:
+Attachments Uploaded: Yes / No / Sending later
+Attachment Types: Images / Videos / Documents / PDFs / Certificates / Reports
+Attachment Links: [Secure links if applicable]
+AI Attachment Summary: [Short summary of useful findings]
+Safety Concerns Flagged From Attachments: Yes / No / Unsure
+
+5. Universal Intake Questions
+After the work category and sub-section have been selected, the widget should collect the following details.
+Customer Details
+1. Full name
+2. Company name, if commercial
+
+3. Contact telephone number
+4. Email address
+5. Full site address, including postcode
+6. Preferred contact method: phone, WhatsApp, or email
+7. Best time to contact
+Job Details
+1. Is the enquiry urgent?
+2. Is there a safety concern, loss of power, active fault, alarm issue, access issue, or system failure?
+3. Is the work required at a home, rental property, business premises, communal building, or other site?
+4. Is this a new installation, repair, upgrade, inspection, certification, or maintenance enquiry?
+5. Please provide a short description of the work required.
+6. Are there any photos, videos, reports, certificates, or documents available to upload?
+7. Is there a preferred date or deadline?
+8. Is access available to the property or site?
+9. Is parking available nearby?
+10. Does the customer need a quotation?
+Quotation Question
+The widget should ask:
+Would you like us to provide a quotation for this work?
+Options:
+1. Yes, I need a quotation
+2. No, I need urgent help / a call back
+3. I’m not sure yet
+
+6. Urgency Logic
+The widget should identify urgent enquiries and escalate them more clearly.
+Urgent Trigger Examples
+ No power
+ Burning smell
+ Sparks
+ Electrical fault
+ Tripping electrics
+ Fire alarm fault
+ Security/access system failure
+ Gate or garage door stuck open or closed
+ EV charger fault causing electrical concern
+ Commercial compliance deadline
+ Safety concern
+ Uploaded image/video appears to show damage, exposed wiring, overheating, burning, water ingress,
+broken equipment, or blocked access
+If urgency is detected, the bot should respond with:
+Thanks. This sounds like it may need urgent attention. I’ll collect the key details now and send them
+straight through so someone can review this as soon as possible.
+
+For serious immediate danger, the bot should also state:
+If there is immediate danger, fire, smoke, or risk to life, please call the emergency services immediately.
+
+7. AI Bot Conversation Flow
+Recommended flow:
+1. Welcome message
+2. Select Domestic Works or Commercial Works
+3. Route to the correct Domestic or Commercial journey
+4. Select main scope of work
+5. Select sub-section
+6. Ask relevant job-specific questions
+7. Ask universal customer details
+8. Ask if a quotation is required
+9. Offer attachment upload for images, videos, documents, reports, and certificates
+10. AI reviews uploaded attachments where technically possible
+11. Confirm preferred contact method
+12. Show the customer a short summary
+13. Ask the customer to confirm the details are correct
+14. Send summary and attachment details to WhatsApp contact for human follow-up
+15. Display final confirmation message
+Example final customer message:
+Thanks, we’ve received your enquiry and passed the details to the relevant person. Someone will review
+this and contact you shortly using your preferred contact method.
+
+8. WhatsApp Handover Requirement
+Once the required details have been collected, the widget must generate a structured summary and send it to a
+nominated WhatsApp number.
+The WhatsApp summary should be clear enough for a human team member to take over without needing to re-ask
+the same basic questions.
+WhatsApp Summary Format
+NEW WEBSITE ENQUIRY
+Received: During working hours / Out of hours
+Customer Type: Domestic / Commercial
+Main Scope: Electrical Works / Fire Safety / Access &amp; Security / Garage Doors &amp; Electric Gates / EV
+Charging
+Sub-Section: [Selected option]
+Urgency: Urgent / Non-urgent / Unsure
+Quotation Required: Yes / No / Unsure
+Customer Details:
+Name: [Full name]
+Company: [Company name if applicable]
+Phone: [Phone number]
+Email: [Email address]
+
+Preferred Contact Method: [Phone / WhatsApp / Email]
+Best Time to Contact: [Customer answer]
+Site Address:
+[Full address including postcode]
+Job Details:
+[Short description provided by customer]
+Relevant Answers:
+- [Answer 1]
+- [Answer 2]
+- [Answer 3]
+Attachments:
+Attachments Uploaded: Yes / No / Sending later
+Attachment Types: Images / Videos / Documents / PDFs / Certificates / Reports
+Attachment Links: [Secure links if applicable]
+AI Attachment Summary: [Short summary of useful findings]
+Safety Concerns Flagged From Attachments: Yes / No / Unsure
+Preferred Date / Deadline: [Customer answer]
+Access / Parking Notes: [Customer answer]
+AI Bot Notes:
+[Any urgency triggers, safety concerns, attachment findings, or key context detected]
+Recommended Next Action:
+Call customer / WhatsApp customer / Email customer / Prepare quotation / Arrange site visit /
+Escalate urgent issue / Review attachments first
+
+9. Working Hours and Out of Hours Logic
+The widget should be able to tag the enquiry as either:
+1. During working hours
+2. Out of hours
+The WhatsApp message should include this status.
+Example:
+Received: Out of hours
+Suggested behaviour:
+ During working hours: send the enquiry to the relevant person/team for normal follow-up.
+ Out of hours: still send the WhatsApp summary, clearly marked as out of hours.
+ Urgent out-of-hours enquiries should be marked clearly as urgent.
+Example urgent out-of-hours heading:
+URGENT OUT OF HOURS WEBSITE ENQUIRY
+
+10. Human Handover Trigger
+
+The bot should offer human handover when:
+ The customer asks to speak to someone
+ The enquiry is urgent
+ The customer provides unclear or complex information
+ The uploaded attachment shows or suggests a possible safety concern
+ The work involves commercial compliance
+ The customer reports a safety concern
+ The customer needs a quotation or site visit
+ The bot cannot confidently categorise the enquiry
+Example handover message:
+Thanks, I’ll pass this to a member of the team so they can review it properly and contact you directly.
+
+11. Suggested Widget Design Notes
+The widget should feel simple, guided, and professional.
+Recommended design approach:
+ Use buttons for Domestic / Commercial selection.
+ Once selected, keep the journey clearly labelled as either Domestic Works or Commercial Works.
+ Use buttons or cards for the five main scopes.
+ Use buttons for sub-sections.
+ Use free-text fields only when the customer needs to describe the issue.
+ Use short question steps instead of one long form.
+ Include an attachment upload step for images, videos, documents, certificates, and reports.
+ Clearly show uploaded file names before submission.
+ Allow customers to remove or replace attachments before submitting.
+ Allow customers to go back and change previous answers.
+ Display a final summary before submission.
+ Include consent wording before sending customer details and attachments via WhatsApp or secure
+handover link.
+Suggested consent wording:
+By submitting this enquiry, you agree for your details and any uploaded attachments to be shared with our
+team so we can contact you about your request.
+
+12. Data Fields for Developer
+The developer should store or pass the following fields:
+customer_type
+main_scope
+sub_section
+urgency_status
+quotation_required
+full_name
+company_name
+phone_number
+email_address
+
+site_address
+postcode
+preferred_contact_method
+best_time_to_contact
+job_description
+job_specific_answers
+attachments_uploaded
+attachment_types
+attachment_file_names
+attachment_secure_links
+ai_attachment_summary
+attachment_safety_flag
+photos_documents_available
+preferred_date_or_deadline
+access_notes
+parking_notes
+working_hours_status
+ai_bot_notes
+recommended_next_action
+submission_timestamp
+
+13. Future Additions
+Possible future enhancements:
+ Route different work categories to different WhatsApp numbers.
+ Add automatic appointment booking.
+ Add CRM integration.
+ Add email confirmation to the customer.
+ Add quote request reference numbers.
+ Add photo/document/video upload with secure cloud storage.
+ Add AI reading of uploaded EICR reports, certificates, and fire alarm reports.
+ Add service area postcode validation.
+ Add emergency triage rules.
+ Add separate commercial compliance journey.
+ Add different question paths for landlords, homeowners, facilities managers, and managing agents.

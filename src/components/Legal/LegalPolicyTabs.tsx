@@ -9,7 +9,7 @@ const tabBase =
 const tabActive = "bg-brand-blue text-white shadow-sm hover:bg-brand-blue";
 
 const tabInactive =
-  "border border-[var(--border)] bg-[var(--surface)] text-foreground hover:border-brand-blue/45 hover:bg-[color-mix(in_srgb,var(--brand-blue)_10%,var(--surface))] dark:hover:bg-blue-950/20";
+  "border border-[var(--border)] bg-[var(--surface)] text-foreground hover:border-brand-blue/45 hover:bg-[color-mix(in_srgb,var(--brand-blue)_10%,var(--surface))] dark:hover:bg-[color-mix(in_srgb,var(--brand-blue)_20%,var(--surface))]";
 
 export function LegalPolicyTabs() {
   const [activeId, setActiveId] = useState<string>(legalPolicies[0]?.id ?? "");
