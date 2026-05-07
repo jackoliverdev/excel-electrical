@@ -18,10 +18,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://excel-electrical.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Excel Electrics - Wire & Fire",
   description:
     "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridgeshire, London and Hertfordshire.",
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Excel Electrics - Wire & Fire",
+    description:
+      "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors.",
+    siteName: "Excel Electrics",
+    images: [
+      {
+        url: "/ExcelElectrics/excelelectricsx.png",
+        width: 1024,
+        height: 1024,
+        alt: "Excel Electrics logo mark",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Excel Electrics - Wire & Fire",
+    description:
+      "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors.",
+    images: ["/ExcelElectrics/excelelectricsx.png"],
+  },
   icons: {
     icon: "/ExcelElectrics/excelelectricsnobgx.ico",
     shortcut: "/ExcelElectrics/excelelectricsnobgx.ico",
