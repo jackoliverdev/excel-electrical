@@ -1,0 +1,35 @@
+Excel Electrics Branding Notes (from latest guideline screenshots)
+Date captured: 20/05/2026
+
+Note:
+- These values are transcribed from screenshots and should be confirmed against the final PDF/asset pack once supplied.
+
+Primary RGB (digital) colours
+- #000000 (black)
+- #4b378c (deep purple)
+- #905bf4 (primary bright purple)
+- #b8a3f9 (light purple)
+
+Secondary RGB (digital) colours
+- #dadada (light grey)
+- #59cbe8 (cyan blue)
+- #6bdbcd (aqua mint)
+
+Gradient direction
+- Angle: -135 degrees (labelled "classic" in the guide)
+
+Gradient sets shown
+- Gradient 01: #000000 -> #4b378c
+- Gradient 02: #905bf4 -> #4b378c
+- Gradient 03: #59cbe8 -> #4b378c
+- Gradient 04: #6bdbcd -> #4b378c
+
+Current implementation intent
+- Use #905bf4 as the key interactive accent (CTAs/highlight text) unless component context requires the deeper #4b378c.
+- Use #4b378c for darker surfaces/overlays where better contrast and brand depth are required.
+- Use #59cbe8 and #6bdbcd sparingly as secondary accents/support colours.
+
+Next step after final logo pack arrives
+- Confirm exact HEX values from source PDF/assets.
+- Align global tokens in src/app/globals.css to this palette.
+- Audit component-level hardcoded colours and map to tokens.

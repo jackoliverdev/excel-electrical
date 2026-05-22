@@ -23,7 +23,7 @@ const footerLegalLinks = [
 ];
 
 const socialIconBtnClass =
-  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300/70 bg-white/90 shadow-sm transition hover:-translate-y-px hover:border-brand-blue/45 hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 dark:border-white/20 dark:bg-white/[0.08] dark:shadow-[0_1px_4px_rgba(0,0,0,0.2)] dark:hover:border-white/35 dark:hover:bg-white/[0.12]";
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300/70 bg-white/90 shadow-sm transition hover:-translate-y-px hover:border-[#905bf4]/45 hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#905bf4]/40 dark:border-white/20 dark:bg-white/[0.08] dark:shadow-[0_1px_4px_rgba(0,0,0,0.2)] dark:hover:border-white/35 dark:hover:bg-white/[0.12]";
 
 export function SiteFooter() {
   return (
@@ -43,7 +43,7 @@ export function SiteFooter() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-0.5 transition hover:text-brand-blue dark:hover:bg-white/15 dark:hover:text-white"
+                className="rounded-md px-0.5 transition hover:text-[#905bf4] dark:hover:bg-white/15 dark:hover:text-white"
                 style={{ color: "var(--foreground)" }}
               >
                 {link.label}
@@ -68,7 +68,8 @@ export function SiteFooter() {
             <p>
               <a
                 href="mailto:info@excelelectrics.com"
-                className="font-medium text-brand-blue transition hover:underline dark:text-white dark:hover:text-white"
+                className="font-medium transition hover:underline"
+                style={{ color: "#905bf4" }}
               >
                 info@excelelectrics.com
               </a>
@@ -76,7 +77,7 @@ export function SiteFooter() {
             <p>
               <a
                 href={FOOTER_PHONE_TEL}
-                className="font-medium text-foreground transition hover:text-brand-blue dark:text-white/95 dark:hover:text-white"
+                className="font-medium text-foreground transition hover:text-[#905bf4] dark:text-white/95 dark:hover:text-white"
               >
                 {FOOTER_PHONE_LABEL}
               </a>
@@ -188,7 +189,7 @@ export function SiteFooter() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-md px-1 transition hover:text-brand-blue dark:hover:bg-white/15 dark:hover:text-white"
+                    className="rounded-md px-1 transition hover:text-[#905bf4] dark:hover:bg-white/15 dark:hover:text-white"
                     style={{ color: "var(--foreground)" }}
                   >
                     {link.label}
@@ -215,7 +216,8 @@ export function SiteFooter() {
               <p>
                 <a
                   href="mailto:info@excelelectrics.com"
-                  className="font-medium text-brand-blue transition hover:underline dark:text-white dark:hover:text-white"
+                  className="font-medium transition hover:underline"
+                  style={{ color: "#905bf4" }}
                 >
                   info@excelelectrics.com
                 </a>
@@ -223,7 +225,7 @@ export function SiteFooter() {
               <p className="mt-2">
                 <a
                   href={FOOTER_PHONE_TEL}
-                  className="font-medium text-foreground transition hover:text-brand-blue dark:text-white/95 dark:hover:text-white"
+                  className="font-medium text-foreground transition hover:text-[#905bf4] dark:text-white/95 dark:hover:text-white"
                 >
                   {FOOTER_PHONE_LABEL}
                 </a>

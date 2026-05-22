@@ -87,7 +87,7 @@ export function ElectricsServices() {
   return (
     <ElectricsSection id="services">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#905bf4] md:text-xs">
           What we can help with
         </p>
         <div className="-mx-3 sm:mx-0">
@@ -107,7 +107,7 @@ export function ElectricsServices() {
             <div key={pillar.title} className="relative min-h-[4rem] pl-3.5">
               <span
                 aria-hidden
-                className="pointer-events-none absolute left-0 top-0 w-0.5 rounded-full bg-brand-blue"
+                className="pointer-events-none absolute left-0 top-0 w-0.5 rounded-full bg-[#4b378c]"
                 style={{
                   height: "100%",
                   transformOrigin: "top center",
@@ -123,17 +123,17 @@ export function ElectricsServices() {
                 }}
               >
                 <div className="flex items-baseline gap-2">
-                  <span className="font-mono text-[10px] font-semibold tabular-nums text-brand-gold md:text-[11px]">
+                  <span className="font-mono text-[10px] font-semibold tabular-nums text-[#905bf4] md:text-[11px]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-foreground text-[15px] font-semibold leading-snug tracking-tight md:text-base">
                     {pillar.title}
                   </h3>
                 </div>
-                <ul className="mt-3 space-y-1 border-t border-[var(--border)] pt-2.5 text-[13px] leading-snug text-[var(--text-muted)] md:text-sm md:leading-relaxed">
+                <ul className="mt-3 space-y-1 border-t border-[#4b378c]/30 pt-2.5 text-[13px] leading-snug text-[var(--text-muted)] md:text-sm md:leading-relaxed">
                   {pillar.items.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <span className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-brand-blue/45" aria-hidden />
+                      <span className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-[#4b378c]/55" aria-hidden />
                       <span>{item}</span>
                     </li>
                   ))}

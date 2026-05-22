@@ -30,6 +30,12 @@
     rgba(9, 6, 19, 0.48) 0%,
     rgba(22, 10, 43, 0.42) 45%,
     rgba(5, 4, 12, 0.58) 100%
+  ),
+  linear-gradient(
+    -135deg,
+    rgba(89, 203, 232, 0.22) 0%,
+    rgba(144, 91, 244, 0.28) 48%,
+    rgba(75, 55, 140, 0.3) 100%
   );
 
   /* Small jobs band — same layered treatment as dark mode */
@@ -72,7 +78,7 @@
   --nav-background: #100a1f;
   --nav-border: #2d2050;
   --surface-nav-panel: #140d25;
-  --electrics-nav-footer-edge: rgba(255, 255, 255, 0.1);
+  --electrics-nav-footer-edge: rgba(75, 55, 140, 0.26);
 
   --hero-gradient-from: #130d23;
   --hero-gradient-to: #090613;
@@ -81,6 +87,12 @@
     rgba(9, 6, 19, 0.68) 0%,
     rgba(22, 10, 43, 0.62) 45%,
     rgba(5, 4, 12, 0.78) 100%
+  ),
+  linear-gradient(
+    -135deg,
+    rgba(89, 203, 232, 0.16) 0%,
+    rgba(144, 91, 244, 0.22) 48%,
+    rgba(75, 55, 140, 0.24) 100%
   );
 
   --electrics-small-jobs-gradient:
@@ -104,8 +116,8 @@
   --electrics-nav-footer-gradient: linear-gradient(
     158deg,
     #0b0716 0%,
-    #160f29 44%,
-    color-mix(in srgb, var(--brand-blue) 12%, #080512) 100%
+    color-mix(in srgb, #4b378c 42%, #100a1f) 44%,
+    color-mix(in srgb, #905bf4 18%, #080512) 100%
   );
 }
 
@@ -217,7 +229,7 @@ body {
 }
 
 .electrics-small-jobs-accent {
-  border-left: 3px solid var(--brand-gold);
+  border-left: 3px solid #4b378c;
 }
 
 .electrics-hero-overlay {

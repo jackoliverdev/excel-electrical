@@ -92,7 +92,7 @@ export function MobileNavbar() {
                   key={item.href}
                   href={item.href}
                   onClick={close}
-                  className="text-foreground rounded-md px-3 py-3 text-sm font-semibold transition-colors hover:text-brand-blue active:text-brand-blue"
+                  className="text-foreground rounded-md px-3 py-3 text-sm font-semibold transition-colors hover:text-[#905bf4] active:text-[#905bf4]"
                 >
                   {item.label}
                 </Link>
@@ -100,7 +100,7 @@ export function MobileNavbar() {
               <Link
                 href="#contact"
                 onClick={close}
-                className="mt-2 inline-flex items-center justify-center rounded-md bg-[#7f3dff] px-4 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(75,1,184,0.92)] transition hover:bg-[#7f3dff] hover:text-white"
+                className="mt-2 inline-flex items-center justify-center rounded-md bg-[#905bf4] px-4 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(75,1,184,0.92)] transition hover:bg-[#905bf4] hover:text-white"
                 style={{ color: "#ffffff" }}
               >
                 Get a quote
