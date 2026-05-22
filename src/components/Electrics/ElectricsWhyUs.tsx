@@ -72,7 +72,7 @@ export function ElectricsWhyUs() {
   return (
     <ElectricsSection id="why-us">
       <div className="mx-auto max-w-5xl text-center">
-        <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#905bf4] md:text-xs">
           Why homeowners choose us
         </p>
         <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
@@ -88,7 +88,7 @@ export function ElectricsWhyUs() {
         {/* Top edge: draws left → right when block enters (same technique as link underlines / nav rules) */}
         <div
           aria-hidden
-          className="h-px w-full origin-left bg-[color-mix(in_srgb,var(--brand-blue)_28%,var(--border))]"
+          className="h-px w-full origin-left bg-[#4b378c]/35"
           style={lineStyle(0)}
         />
 
@@ -100,7 +100,7 @@ export function ElectricsWhyUs() {
               <li key={line} className="relative">
                 <div className="flex gap-3 py-3.5 text-left md:gap-4 md:py-4 pl-0.5 sm:pl-1">
                   <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 text-[11px] font-bold text-brand-gold"
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#4b378c]/60 text-[11px] font-bold text-[#905bf4]"
                     style={tickStyle(start)}
                     aria-hidden
                   >
@@ -116,7 +116,7 @@ export function ElectricsWhyUs() {
 
                 <div
                   aria-hidden
-                  className="h-px w-full origin-left bg-[var(--border)]"
+                  className="h-px w-full origin-left bg-[#4b378c]/28"
                   style={lineStyle(start)}
                 />
               </li>

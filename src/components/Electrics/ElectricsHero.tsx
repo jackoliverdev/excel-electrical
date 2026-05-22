@@ -2,10 +2,10 @@ import Link from "next/link";
 import { ELECTRICS_HERO_BOTTOM_ONLY } from "@/components/Electrics/ElectricsSection";
 
 const primaryBtn =
-  "group inline-flex items-center justify-center gap-2 rounded-md bg-[#7f3dff] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_28px_-14px_rgba(75,1,184,0.92)] transition-all duration-200 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_36px_-18px_rgba(75,1,184,0.98)] motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/55";
+  "group inline-flex items-center justify-center gap-2 rounded-md bg-[#905bf4] px-6 py-3 text-sm font-semibold text-white shadow-none transition-all duration-200 ease-out motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/55";
 
 const secondaryBtn =
-  "electrics-hero-secondary-btn group inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-none backdrop-blur-sm transition-all duration-200 ease-out hover:border-white/45 hover:bg-white/16 motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
+  "electrics-hero-secondary-btn group inline-flex items-center justify-center gap-2 rounded-md border border-[#b8a3f9]/55 bg-white/10 px-6 py-3 text-sm font-semibold text-[#efe8ff] shadow-none backdrop-blur-sm transition-all duration-200 ease-out hover:border-[#905bf4] hover:bg-[#905bf4]/18 motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
 
 function IconMail({ className }: { className?: string }) {
   return (
@@ -65,13 +65,13 @@ export function ElectricsHero() {
         className={`relative mx-auto flex min-h-[70vh] w-full max-w-7xl items-end px-6 pt-16 md:min-h-[76vh] md:items-center ${ELECTRICS_HERO_BOTTOM_ONLY}`}
       >
         <div className="max-w-4xl space-y-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7f3dff] md:text-xs">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#905bf4] md:text-xs">
             Home safety and electrical specialists
           </p>
 
           <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
             <span className="block">Keeping your home</span>
-            <span className="block text-[#7f3dff]">safe &amp; powered</span>
+            <span className="block text-[#905bf4]">safe &amp; powered</span>
           </h1>
 
           <p className="text-base leading-relaxed text-slate-200 md:text-lg">

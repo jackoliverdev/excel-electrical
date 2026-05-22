@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-const LIGHT_LOGO_SRC = "/ExcelElectrics/Excel Electrics Logo Purple.png";
-const DARK_LOGO_SRC = "/ExcelElectrics/Excel Electrics Logo Darkmode.png";
+const LIGHT_LOGO_SRC = "/ExcelElectrics/NewLogo/Excel Electrics Horizontal Light Mode.png";
+const DARK_LOGO_SRC = "/ExcelElectrics/NewLogo/Excel Electrics Horizontal Dark Mode.png";
 
 type ElectricsLogoProps = {
   className?: string;

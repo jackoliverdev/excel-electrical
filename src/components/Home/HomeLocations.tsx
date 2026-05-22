@@ -500,7 +500,15 @@ export function HomeLocations({
   sectionId,
   heading,
 }: HomeLocationsProps = {}) {
-  const getAreaLabel = (county: string) => (county === "Greater London" ? "G. London" : county);
+  const renderAreaLabel = (county: string) =>
+    county === "Greater London" ? (
+      <>
+        <span className="sm:hidden">G. London</span>
+        <span className="hidden sm:inline">Greater London</span>
+      </>
+    ) : (
+      county
+    );
 
   const pathname = usePathname();
   const initialAreas = variant === "electrics" ? electricsCoverageAreas : coverageAreas;
@@ -1101,18 +1109,18 @@ export function HomeLocations({
 
   const chipActive = variant === "electrics";
   const regionChipActiveClass = chipActive
-    ? "border-brand-blue bg-brand-blue text-white"
+    ? "border-[#905bf4] bg-[#905bf4] text-white"
     : "border-emerald-500 bg-emerald-500 text-white";
   const regionChipInactiveClass = chipActive
-    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-blue hover:text-foreground"
+    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-[#4b378c] hover:text-foreground"
     : "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-accent hover:text-foreground";
   const areaBtnActiveClass = chipActive
-    ? "border-brand-blue bg-brand-blue text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] dark:border-brand-blue dark:bg-brand-blue dark:text-white"
+    ? "border-[#905bf4] bg-[#905bf4] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] dark:border-[#905bf4] dark:bg-[#905bf4] dark:text-white"
     : "border-emerald-500 bg-emerald-500 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] dark:border-emerald-500 dark:bg-emerald-500 dark:text-white";
   const areaBtnInactiveClass = chipActive
-    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-blue hover:bg-[color-mix(in_srgb,var(--brand-blue)_12%,var(--surface))] hover:text-foreground dark:hover:bg-[color-mix(in_srgb,var(--brand-blue)_26%,var(--surface))] dark:hover:text-white"
+    ? "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-[#4b378c] hover:bg-[color-mix(in_srgb,#4b378c_10%,var(--surface))] hover:text-foreground dark:hover:bg-[color-mix(in_srgb,#4b378c_24%,var(--surface))] dark:hover:text-white"
     : "border-[var(--border)] bg-[var(--surface-nav-panel)] text-[var(--text-muted)] hover:border-brand-accent hover:bg-orange-50 hover:text-slate-900 dark:hover:bg-orange-950/30 dark:hover:text-orange-100";
-  const checkMuted = chipActive ? "text-brand-blue" : "text-brand-accent";
+  const checkMuted = chipActive ? "text-[#4b378c]" : "text-brand-accent";
 
   /** Shorter than the left column so the map feels lighter; bottom edge stays aligned via `lg:self-end`. */
   const ELECTRICS_DESKTOP_MAP_HEIGHT_TRIM_PX = 36;
@@ -1144,7 +1152,7 @@ export function HomeLocations({
             <p
               className={
                 variant === "electrics"
-                  ? "text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs"
+                  ? "text-[11px] font-semibold uppercase tracking-[0.18em] text-[#905bf4] md:text-xs"
                   : "text-muted text-xs font-medium uppercase tracking-[0.16em]"
               }
             >
@@ -1285,7 +1293,7 @@ export function HomeLocations({
                     >
                       ✓
                     </span>
-                    <span>{getAreaLabel(area.county)}</span>
+                    <span>{renderAreaLabel(area.county)}</span>
                   </button>
                 ))}
               </div>
@@ -1337,11 +1345,11 @@ export function HomeLocations({
                     >
                       ✓
                     </span>
-                    <span>{getAreaLabel(area.county)}</span>
+                    <span>{renderAreaLabel(area.county)}</span>
                   </button>
                 ))}
               </div>
-              <div className="mt-3 border-t border-[var(--border)] pt-3">
+              <div className="mt-3 border-t border-[#4b378c]/30 pt-3">
                 <p className="text-sm leading-relaxed text-[var(--text-muted)] md:text-[15px] md:leading-7">
                   <span className="font-semibold text-foreground">{activeArea?.county ?? "Area"} coverage:</span>{" "}
                   {activeArea && activeArea.towns.length > 0

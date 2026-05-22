@@ -7,11 +7,11 @@ const labelClass =
   "text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]";
 
 const inputClass =
-  "w-full rounded-md border border-[var(--border)] bg-transparent px-3 py-2.5 text-sm text-foreground outline-none transition placeholder:text-[var(--text-muted)] focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25 focus:ring-offset-0";
+  "w-full rounded-md border border-[var(--border)] bg-transparent px-3 py-2.5 text-sm text-foreground outline-none transition placeholder:text-[var(--text-muted)] focus:border-[#905bf4] focus:ring-2 focus:ring-[#905bf4]/25 focus:ring-offset-0";
 
 /** Muted blue → full blue on hover */
 const submitPrimaryBtn =
-  "mt-1 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-brand-blue/75 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/45 sm:w-auto sm:self-start";
+  "mt-1 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-[#905bf4]/82 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#905bf4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#905bf4]/45 sm:w-auto sm:self-start";
 
 function IconMail({ className }: { className?: string }) {
   return (
@@ -78,7 +78,7 @@ export function ElectricsContact() {
     <ElectricsSection id="contact" majorSeam>
       <div ref={sectionRef}>
         <div className="mx-auto max-w-5xl text-center">
-          <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#905bf4] md:text-xs">
             Need a quote or advice?
           </p>
           <h2 className="text-foreground mt-2 text-2xl font-semibold tracking-tight md:text-3xl">Get in touch</h2>
@@ -87,12 +87,12 @@ export function ElectricsContact() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl border-t border-[var(--border)] pt-8 md:mt-10 md:pt-10 lg:mt-12 lg:max-w-5xl lg:pt-12">
+        <div className="mx-auto mt-8 max-w-3xl border-t border-[#4b378c]/30 pt-8 md:mt-10 md:pt-10 lg:mt-12 lg:max-w-5xl lg:pt-12">
           <div
-            className="grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:gap-0 lg:divide-x lg:divide-[var(--border)]"
+            className="grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:gap-0 lg:divide-x lg:divide-[#4b378c]/30"
           >
             <aside className={`lg:pr-10 ${textRevealClass} ${visibleClass}`}>
-            <div className="border-l-[3px] border-[color:var(--brand-blue)] pl-4">
+            <div className="border-l-[3px] border-[#4b378c] pl-4">
               <div>
                 <p className={labelClass}>Email</p>
                 <a
@@ -106,7 +106,7 @@ export function ElectricsContact() {
                 <p className={labelClass}>Phone</p>
                 <a
                   href="tel:+442033025558"
-                  className="mt-1.5 block text-[15px] font-medium text-foreground hover:text-brand-blue"
+                  className="mt-1.5 block text-[15px] font-medium text-foreground hover:text-[#905bf4]"
                 >
                   020 3302 5558
                 </a>

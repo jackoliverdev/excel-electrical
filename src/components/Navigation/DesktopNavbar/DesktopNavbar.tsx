@@ -22,14 +22,14 @@ export function DesktopNavbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-foreground rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-brand-blue active:text-brand-blue"
+              className="text-foreground rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-[#905bf4] active:text-[#905bf4]"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="#contact"
-            className="ml-2 inline-flex items-center rounded-md bg-[#7f3dff] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(75,1,184,0.92)] transition hover:bg-[#7f3dff] hover:text-white"
+            className="ml-2 inline-flex items-center rounded-md bg-[#905bf4] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_-14px_rgba(75,1,184,0.92)] transition hover:bg-[#905bf4] hover:text-white"
           >
             Get a quote
           </Link>

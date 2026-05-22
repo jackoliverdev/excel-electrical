@@ -42,7 +42,7 @@ export function ElectricsSmallJobs() {
         <div
           className={`electrics-small-jobs-accent reveal-fade-up mx-auto max-w-5xl pl-5 sm:pl-7 ${isVisible ? "is-visible" : ""}`}
         >
-          <p className="text-brand-gold text-[11px] font-semibold uppercase tracking-[0.18em] md:text-xs">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#905bf4] md:text-xs">
             Small jobs welcome
           </p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
