@@ -40,9 +40,12 @@ export function ElectricsContact() {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1023px)");
     const updateIsMobile = () => setIsMobile(mediaQuery.matches);
-    updateIsMobile();
+    const frame = window.requestAnimationFrame(updateIsMobile);
     mediaQuery.addEventListener("change", updateIsMobile);
-    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
   }, []);
 
   useEffect(() => {
@@ -50,8 +53,8 @@ export function ElectricsContact() {
     if (!node) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setIsVisible(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setIsVisible(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(

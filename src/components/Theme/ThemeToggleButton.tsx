@@ -12,7 +12,8 @@ export function ThemeToggleButton({ className = "" }: ThemeToggleButtonProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const isDark = mounted && resolvedTheme === "dark";

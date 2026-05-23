@@ -29,7 +29,8 @@ export function LegalPolicyTabs() {
   }, []);
 
   const select = (id: string) => {
-    window.location.hash = id;
+    setActiveId(id);
+    window.history.pushState(null, "", `#${id}`);
   };
 
   return (

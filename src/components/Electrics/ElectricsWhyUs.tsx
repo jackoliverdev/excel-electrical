@@ -25,8 +25,8 @@ export function ElectricsWhyUs() {
     if (typeof window === "undefined") return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setRowsOn(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setRowsOn(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const el = regionRef.current;
