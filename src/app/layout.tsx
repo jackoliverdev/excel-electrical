@@ -20,38 +20,79 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://excel-electrical.vercel.app";
+const siteName = "Excel Electrics";
+const siteDescription =
+  "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridgeshire, London and Hertfordshire.";
+const socialImage = "/ExcelElectrics/NewLogo/ExcelWhatsapp.png";
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  name: siteName,
+  legalName: "Excel Fire Ltd",
+  alternateName: "Excel Fire Ltd, trading as Excel Electrics",
+  url: siteUrl,
+  logo: `${siteUrl}/ExcelElectrics/NewLogo/Excel%20Electrics%20Horizontal%20Light%20Mode.png`,
+  image: `${siteUrl}${socialImage}`,
+  description: siteDescription,
+  telephone: "020 3302 5558",
+  email: "info@excelelectrics.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "124 City Road",
+    addressLocality: "London",
+    postalCode: "EC1V 2NX",
+    addressCountry: "GB",
+  },
+  areaServed: ["Essex", "Suffolk", "Cambridgeshire", "Hertfordshire", "London", "Greater London"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  makesOffer: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Domestic electrical work" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fire safety systems" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Access and security systems" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Garage doors and electric gates" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "EV charging" } },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Excel Electrics - Wire & Fire",
-  description:
-    "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors. Essex, Suffolk, Cambridgeshire, London and Hertfordshire.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: "/",
     title: "Excel Electrics - Wire & Fire",
-    description:
-      "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors.",
-    siteName: "Excel Electrics",
+    description: siteDescription,
+    siteName,
     images: [
       {
-        url: "/ExcelElectrics/excelelectricsx.png",
-        width: 1024,
-        height: 1024,
-        alt: "Excel Electrics logo mark",
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "Excel Electrics - Wire & Fire logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Excel Electrics - Wire & Fire",
-    description:
-      "Friendly local electricians for your home: electrical work, fire safety, access systems and garage doors.",
-    images: ["/ExcelElectrics/excelelectricsx.png"],
+    description: siteDescription,
+    images: [socialImage],
   },
   icons: {
-    icon: "/ExcelElectrics/excelelectricsnobgx.ico",
-    shortcut: "/ExcelElectrics/excelelectricsnobgx.ico",
+    icon: "/ExcelElectrics/NewLogo/Excel Favicon.ico",
+    shortcut: "/ExcelElectrics/NewLogo/Excel Favicon.ico",
     apple: "/ExcelElectrics/ExcelElectrics.png",
   },
 };
@@ -88,6 +129,12 @@ export default function RootLayout({
           src="https://app.centrus.ai/embed/custom-chatbot.js"
           data-chatbot-id="d559aaa9-a68c-48e3-9063-39a8547405fe"
           strategy="afterInteractive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(businessJsonLd).replace(/</g, "\\u003c"),
+          }}
         />
       </body>
     </html>
