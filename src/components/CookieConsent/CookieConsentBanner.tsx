@@ -24,7 +24,8 @@ export function CookieConsentBanner() {
 
   useEffect(() => {
     if (hasStoredChoice()) return;
-    setVisible(true);
+    const timer = window.setTimeout(() => setVisible(true), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const dismiss = (value: typeof COOKIE_CONSENT_ACCEPTED | typeof COOKIE_CONSENT_ESSENTIAL_ONLY) => {

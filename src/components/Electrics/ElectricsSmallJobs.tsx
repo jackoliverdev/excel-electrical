@@ -12,8 +12,8 @@ export function ElectricsSmallJobs() {
     if (!node) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setIsVisible(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setIsVisible(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(

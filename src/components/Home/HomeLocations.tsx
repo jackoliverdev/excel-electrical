@@ -638,10 +638,13 @@ export function HomeLocations({
     const root = document.documentElement;
     const syncTheme = () => setIsDarkTheme(root.classList.contains("dark"));
 
-    syncTheme();
+    const frame = window.requestAnimationFrame(syncTheme);
     const observer = new MutationObserver(syncTheme);
     observer.observe(root, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -655,14 +658,16 @@ export function HomeLocations({
   useEffect(() => {
     if (displayAreas.length === 0) return;
     if (!displayAreas.some((area) => area.id === activeAreaId)) {
-      setActiveAreaId(displayAreas[0].id);
+      const timer = window.setTimeout(() => setActiveAreaId(displayAreas[0].id), 0);
+      return () => window.clearTimeout(timer);
     }
   }, [displayAreas, activeAreaId]);
 
   useEffect(() => {
     if (groupedAreas.length === 0) return;
     if (!groupedAreas.some((group) => group.id === activeRegionId)) {
-      setActiveRegionId(groupedAreas[0].id);
+      const timer = window.setTimeout(() => setActiveRegionId(groupedAreas[0].id), 0);
+      return () => window.clearTimeout(timer);
     }
   }, [groupedAreas, activeRegionId]);
 
@@ -748,9 +753,12 @@ export function HomeLocations({
 
     const mediaQuery = window.matchMedia("(max-width: 1023px)");
     const updateIsMobile = () => setIsMobile(mediaQuery.matches);
-    updateIsMobile();
+    const frame = window.requestAnimationFrame(updateIsMobile);
     mediaQuery.addEventListener("change", updateIsMobile);
-    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
   }, []);
 
   useEffect(() => {
@@ -758,8 +766,8 @@ export function HomeLocations({
     if (!node) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setIsVisible(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setIsVisible(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(
@@ -781,8 +789,8 @@ export function HomeLocations({
   /** Desktop electrics: map card height tracks left column so bottoms align. */
   useEffect(() => {
     if (variant !== "electrics") {
-      setElectricsDesktopSyncHeight(null);
-      return;
+      const frame = window.requestAnimationFrame(() => setElectricsDesktopSyncHeight(null));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const el = electricsLeftColumnRef.current;
@@ -803,9 +811,10 @@ export function HomeLocations({
     });
     ro.observe(el);
     window.addEventListener("resize", updateHeight);
-    updateHeight();
+    const frame = window.requestAnimationFrame(updateHeight);
 
     return () => {
+      window.cancelAnimationFrame(frame);
       ro.disconnect();
       window.removeEventListener("resize", updateHeight);
     };

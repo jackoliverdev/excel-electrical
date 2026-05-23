@@ -63,8 +63,8 @@ export function ElectricsServices() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setRailsOn(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setRailsOn(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const el = regionRef.current;
