@@ -35,7 +35,7 @@ const businessJsonLd = {
   logo: `${siteUrl}/ExcelElectrics/NewLogo/Excel%20Electrics%20Horizontal%20Light%20Mode.png`,
   image: `${siteUrl}${socialImage}`,
   description: siteDescription,
-  telephone: "020 3302 5558",
+  telephone: "07730591822",
   email: "info@excelelectrics.com",
   address: {
     "@type": "PostalAddress",
@@ -49,7 +49,7 @@ const businessJsonLd = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
+      opens: "08:00",
       closes: "17:00",
     },
   ],

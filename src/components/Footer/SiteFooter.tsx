@@ -5,8 +5,8 @@ import { ElectricsLogo } from "@/components/Brand/ElectricsLogo";
 const FOOTER_FACEBOOK_HREF = "https://www.facebook.com/";
 const FOOTER_LINKEDIN_HREF = "https://www.linkedin.com/";
 
-const FOOTER_PHONE_TEL = "tel:+442033025558";
-const FOOTER_PHONE_LABEL = "020 3302 5558";
+const FOOTER_PHONE_TEL = "tel:+447730591822";
+const FOOTER_PHONE_LABEL = "07730591822";
 const FOOTER_LEGAL_DISCLAIMER = "Excel Fire Ltd, trading as Excel Electrics.";
 
 const footerLinks = [
