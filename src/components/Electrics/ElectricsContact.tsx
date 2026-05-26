@@ -108,12 +108,12 @@ export function ElectricsContact() {
               <div className="mt-6">
                 <p className={labelClass}>Phone</p>
                 <a
-                  href="tel:+442033025558"
+                  href="tel:+447730591822"
                   className="mt-1.5 block text-[15px] font-medium text-foreground hover:text-[#905bf4]"
                 >
-                  020 3302 5558
+                  07730591822
                 </a>
-                <p className="text-muted mt-1 text-xs leading-snug">Mon-Fri, 09:00-17:00</p>
+                <p className="text-muted mt-1 text-xs leading-snug">Mon-Fri, 08:00-17:00</p>
               </div>
               <div className="mt-6">
                 <address className="text-[15px] font-medium leading-snug text-foreground not-italic">
