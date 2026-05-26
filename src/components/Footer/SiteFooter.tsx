@@ -77,7 +77,8 @@ export function SiteFooter() {
             <p>
               <a
                 href={FOOTER_PHONE_TEL}
-                className="font-medium text-foreground transition hover:text-[#905bf4] dark:text-white/95 dark:hover:text-white"
+                className="font-medium transition hover:text-[#905bf4] dark:hover:text-white"
+                style={{ color: "var(--foreground)" }}
               >
                 {FOOTER_PHONE_LABEL}
               </a>
@@ -225,7 +226,8 @@ export function SiteFooter() {
               <p className="mt-2">
                 <a
                   href={FOOTER_PHONE_TEL}
-                  className="font-medium text-foreground transition hover:text-[#905bf4] dark:text-white/95 dark:hover:text-white"
+                  className="font-medium transition hover:text-[#905bf4] dark:hover:text-white"
+                  style={{ color: "var(--foreground)" }}
                 >
                   {FOOTER_PHONE_LABEL}
                 </a>
