@@ -45,9 +45,9 @@ export function CookieConsentBanner() {
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-desc"
       aria-live="polite"
-      className="fixed inset-x-0 bottom-0 z-[130] border-t border-[var(--border)] bg-[var(--surface)] px-4 py-4 shadow-[0_-8px_30px_-12px_rgba(15,23,42,0.25)] md:px-6 md:py-5 dark:shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.45)]"
+      className="fixed inset-x-3 bottom-3 z-[130] mx-auto max-w-6xl rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-4 shadow-[0_18px_45px_-24px_rgba(15,23,42,0.4)] md:bottom-6 md:px-6 md:py-5 dark:shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
         <div className="min-w-0 flex-1 space-y-2">
           <h2 id="cookie-consent-title" className="text-base font-semibold text-foreground">
             Cookies on this site

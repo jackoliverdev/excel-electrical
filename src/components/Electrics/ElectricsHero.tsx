@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ELECTRICS_HERO_BOTTOM_ONLY } from "@/components/Electrics/ElectricsSection";
 
@@ -44,16 +48,55 @@ function IconWrench({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Hero entry — uses the site-wide `reveal-rise` system, but eased a little slower than the
+ * default 700ms so the staggered intro feels calmer.
+ */
+const HERO_REVEAL_DURATION_MS = 1050;
+const revealDelay = (ms: number) =>
+  ({ "--reveal-delay": `${ms}ms`, transitionDuration: `${HERO_REVEAL_DURATION_MS}ms` }) as React.CSSProperties;
+
 /** Full-bleed loop + flat scrim — minimal overlay. */
 export function ElectricsHero() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = contentRef.current;
+    if (!node) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      const frame = window.requestAnimationFrame(() => setIsVisible(true));
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const visibleClass = isVisible ? "is-visible" : "";
+
   return (
     <section id="top" className="relative isolate min-h-[70vh] scroll-mt-0 overflow-hidden bg-black md:min-h-[76vh]">
-      <img
+      <Image
         src="/ExcelElectrics/Excel Home Hero.png"
         alt="Electric vehicle charger installation at a home"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-        loading="eager"
-        decoding="async"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
 
       <div
@@ -64,17 +107,26 @@ export function ElectricsHero() {
       <div
         className={`relative mx-auto flex min-h-[70vh] w-full max-w-7xl items-end px-6 pt-16 md:min-h-[76vh] md:items-center ${ELECTRICS_HERO_BOTTOM_ONLY}`}
       >
-        <div className="max-w-4xl space-y-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#905bf4] md:text-xs">
+        <div ref={contentRef} className="max-w-4xl space-y-6">
+          <p
+            className={`reveal-rise ${visibleClass} text-[11px] font-semibold uppercase tracking-[0.2em] text-[#905bf4] md:text-xs`}
+            style={revealDelay(0)}
+          >
             Home safety and electrical specialists
           </p>
 
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1
+            className={`reveal-rise ${visibleClass} text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl`}
+            style={revealDelay(130)}
+          >
             <span className="block">Keeping your home</span>
             <span className="block text-[#905bf4]">safe &amp; powered</span>
           </h1>
 
-          <p className="text-base leading-relaxed text-slate-200 md:text-lg">
+          <p
+            className={`reveal-rise ${visibleClass} text-base leading-relaxed text-slate-200 md:text-lg`}
+            style={revealDelay(260)}
+          >
             <span className="block">Need help with electrics or fire safety at home?</span>
             <span className="block">
               We&apos;re here to make it simple - from small repairs to full installations, with clear pricing and no
@@ -83,7 +135,7 @@ export function ElectricsHero() {
             <span className="block">Serving Essex, Suffolk, Cambridgeshire, Hertfordshire and London.</span>
           </p>
 
-          <div className="flex flex-wrap items-center gap-3 pt-1">
+          <div className={`reveal-rise ${visibleClass} flex flex-wrap items-center gap-3 pt-1`} style={revealDelay(390)}>
             <Link href="#contact" className={primaryBtn}>
               <span
                 className="electrics-hero-btn-mail-icon inline-flex shrink-0 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:-translate-y-1"

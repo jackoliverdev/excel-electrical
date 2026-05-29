@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ElectricsLogo } from "@/components/Brand/ElectricsLogo";
 
 /** Replace with your live Facebook Page and LinkedIn company URLs when ready */
@@ -93,11 +94,12 @@ export function SiteFooter() {
               className={`${socialIconBtnClass} h-8 w-8`}
               aria-label="Excel Electrics on Facebook"
             >
-              <img
+              <Image
                 src="/icons/2023_Facebook_icon.svg"
                 alt=""
                 width={16}
                 height={16}
+                unoptimized
                 className="h-4 w-4 object-contain"
               />
             </a>
@@ -108,11 +110,12 @@ export function SiteFooter() {
               className={`${socialIconBtnClass} h-8 w-8`}
               aria-label="Excel Electrics on LinkedIn"
             >
-              <img
+              <Image
                 src="/icons/linkedin.svg"
                 alt=""
                 width={16}
                 height={16}
+                unoptimized
                 className="h-4 w-4 object-contain"
               />
             </a>
@@ -157,11 +160,12 @@ export function SiteFooter() {
                 className={socialIconBtnClass}
                 aria-label="Excel Electrics on Facebook"
               >
-                <img
+                <Image
                   src="/icons/2023_Facebook_icon.svg"
                   alt=""
                   width={18}
                   height={18}
+                  unoptimized
                   className="h-[18px] w-[18px] object-contain"
                 />
               </a>
@@ -172,11 +176,12 @@ export function SiteFooter() {
                 className={socialIconBtnClass}
                 aria-label="Excel Electrics on LinkedIn"
               >
-                <img
+                <Image
                   src="/icons/linkedin.svg"
                   alt=""
                   width={18}
                   height={18}
+                  unoptimized
                   className="h-[18px] w-[18px] object-contain"
                 />
               </a>
