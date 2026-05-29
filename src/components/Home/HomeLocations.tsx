@@ -1157,7 +1157,7 @@ export function HomeLocations({
           ref={electricsLeftColumnRef}
           className={`min-w-0 space-y-6 ${variant === "electrics" ? "lg:self-start" : ""} ${textRevealClass} ${visibleClass}`}
         >
-          <div>
+          <div className={variant === "electrics" ? "text-center lg:text-left" : undefined}>
             <p
               className={
                 variant === "electrics"

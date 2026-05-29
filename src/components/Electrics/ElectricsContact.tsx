@@ -131,6 +131,16 @@ export function ElectricsContact() {
               action="#"
               method="post"
             >
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="enquiry-company">Company</label>
+              <input
+                id="enquiry-company"
+                name="company"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="space-y-2">
               <label htmlFor="enquiry-name" className={labelClass}>
                 Name

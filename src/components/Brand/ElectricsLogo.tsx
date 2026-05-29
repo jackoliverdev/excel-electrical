@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 
 const LIGHT_LOGO_SRC = "/ExcelElectrics/NewLogo/Excel Electrics Horizontal Light Mode.png";
 const DARK_LOGO_SRC = "/ExcelElectrics/NewLogo/Excel Electrics Horizontal Dark Mode.png";
+const LOGO_ASPECT_RATIO = 5000 / 1042;
 
 type ElectricsLogoProps = {
   className?: string;
@@ -17,12 +19,12 @@ type ElectricsLogoProps = {
 export function ElectricsLogo({
   className = "",
   width = 220,
-  height = 56,
   priority = false,
   variant = "auto",
 }: ElectricsLogoProps) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const renderedHeight = Math.round(width / LOGO_ASPECT_RATIO);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setMounted(true));
@@ -39,15 +41,14 @@ export function ElectricsLogo({
           : LIGHT_LOGO_SRC;
 
   return (
-    <img
+    <Image
       src={logoSrc}
       alt="Excel Electrics - Wire & Fire"
       width={width}
-      height={height}
+      height={renderedHeight}
       className={`object-contain object-left ${className}`}
-      loading={priority ? "eager" : "lazy"}
-      fetchPriority={priority ? "high" : "auto"}
-      decoding="async"
+      style={{ width, height: "auto" }}
+      priority={priority}
     />
   );
 }

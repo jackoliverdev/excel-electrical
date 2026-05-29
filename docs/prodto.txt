@@ -1,3 +1,0 @@
-- Contact form wire up resend
-- Wire up real domain
-- Google search crawl
