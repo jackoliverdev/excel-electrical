@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useMotionValue, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { ElectricsSection } from "@/components/Electrics/ElectricsSection";
+import { LightningBolt } from "@/components/Electrics/LightningBolt";
 
 const labelClass =
   "text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]";
@@ -34,6 +36,8 @@ function IconMail({ className }: { className?: string }) {
 
 export function ElectricsContact() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const accentRef = useRef<HTMLDivElement | null>(null);
+  const reduceMotion = useReducedMotion() ?? false;
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -73,6 +77,15 @@ export function ElectricsContact() {
     return () => observer.disconnect();
   }, []);
 
+  // Left accent charges top → bottom as the contact details scroll into view (same clip fill as the bolts).
+  const { scrollYProgress } = useScroll({
+    target: accentRef,
+    offset: ["start 0.9", "end 0.6"],
+  });
+  const scrollCharge = useTransform(scrollYProgress, [0, 1], [0, 1], { clamp: true });
+  const staticCharge = useMotionValue(1);
+  const charge = reduceMotion ? staticCharge : scrollCharge;
+
   const visibleClass = isVisible ? "is-visible" : "";
   const textRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-left";
   const formRevealClass = isMobile ? "reveal-fade-up" : "reveal-slide-right";
@@ -95,7 +108,12 @@ export function ElectricsContact() {
             className="grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:gap-0 lg:divide-x lg:divide-[#4b378c]/30"
           >
             <aside className={`lg:pr-10 ${textRevealClass} ${visibleClass}`}>
-            <div className="border-l-[3px] border-[#4b378c] pl-4">
+            <div ref={accentRef} className="relative pl-7">
+              {/* Charging left accent: the same brand lightning bolt as the services section */}
+              <LightningBolt
+                progress={charge}
+                className="pointer-events-none absolute left-0 top-0 h-full w-[18px]"
+              />
               <div>
                 <p className={labelClass}>Email</p>
                 <a
