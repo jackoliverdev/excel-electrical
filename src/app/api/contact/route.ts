@@ -2,8 +2,6 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info@excelelectrics.com";
 // Until the sending domain is verified in Resend, fall back to the shared test sender.
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "Excel Electrics <onboarding@resend.dev>";
@@ -62,6 +60,9 @@ export async function POST(request: Request) {
   if (!process.env.RESEND_API_KEY) {
     return Response.json({ ok: false, error: "Email service is not configured." }, { status: 500 });
   }
+
+  // Construct lazily (inside the handler) so the build never fails when the key is absent.
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   let formData: FormData;
   try {
