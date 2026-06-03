@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="excelFaviconBg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9663f7" />
+      <stop offset="1" stop-color="#43307e" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#excelFaviconBg)" />
+  <g transform="translate(61,61) scale(1.56)" fill="#ffffff">
+    <polygon points="94.6 102.2 116.4 68.3 77.7 8.7 17.4 8.7 78.5 102.2 94.6 102.2" />
+    <polygon points="199.6 101.1 167.9 101.1 228 8.7 166.6 8.7 106.4 102.2 129.8 102.2 14.1 241.4 199.6 101.1" />
+    <polygon points="165.5 139.8 123.8 171.4 169.6 241.4 236.1 241.4 165.5 139.8" />
+  </g>
+</svg>
